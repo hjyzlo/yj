@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "dtpweb": "^2.6.20240319",
     "express": "^4.19.2",
     "mongoose": "^4.4.0"

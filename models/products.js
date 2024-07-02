@@ -7,4 +7,4 @@ const productsSchema = new mongoose.Schema({
     stat:{type:Boolean,required:false},
     creatDate:{type:Date,required:false},
 })
-module.exports = new mongoose.model('products',productsSchema)
+module.exports = mongoose.model('products',productsSchema)
