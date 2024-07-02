@@ -1,0 +1,18 @@
+{
+  "name": "yj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "dtpweb": "^2.6.20240319",
+    "express": "^4.19.2",
+    "mongoose": "^4.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
