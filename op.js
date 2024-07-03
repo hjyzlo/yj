@@ -40,4 +40,17 @@ exports.pAdd = async (req,res)=>{
 
     }
 }
+exports.pQuery= async (req,res)=>{
+    try{
+        console.log(req.body)
+        const newProducts = await products.findOne((objectId)req.body._id)
+        console.log(newProducts.get("_id").toString())
+        await pLabel(newProducts.get("_id").toString(),newProducts.get("price").toString())
+        
+        res.json(newProducts)
+        
+    }catch(error){
+
+    }
+}
 module.exports = exports
