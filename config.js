@@ -4,13 +4,13 @@ exports.Pinfo = {
     printerName:'P1S',
     qrcodeX:1,
     qrcodeY:1,
-    textX:16,
+    textX:20,
     textY:1,
     labelWidth:25,
     labelHeight:15,
     margin:1,
     qrcodeWidth:13,
-    fontHeight:5,
+    fontHeight:3,
     orientation:90
 }
 module.exports = exports
