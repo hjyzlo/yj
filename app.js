@@ -3,6 +3,7 @@ const route =require("./routes")
 const bp = require("body-parser")
 const mongoose = require("mongoose")
 const config = require("./config")
+
 const app = express()
 mongoose.connect(config.mongoUrl)
 app.use(bp.urlencoded({extended:true}))
