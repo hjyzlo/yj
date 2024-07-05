@@ -1,8 +1,9 @@
 const products = require("./models/products")
 const mongoose = require("mongoose")
 const {DTPWeb} = require("dtpweb")
-const {Pinfo} = require("./config")
+const {Pinfo,wx,mjwt} = require("./config")
 const fly = require("flyio")
+const jwt = require("jsonwebtoken")
 pLabel = async (_id,price)=>{
     let api = DTPWeb.getInstance();
     DTPWeb.checkServer((value) => {
@@ -30,23 +31,18 @@ pLabel = async (_id,price)=>{
 }
 exports.pAdd = async (req,res)=>{
     try{
-        console.log(req.body)
         const newProducts = await products.create(req.body)
-        console.log(newProducts.get("_id").toString())
-        await pLabel(newProducts.get("_id").toString(),newProducts.get("price").toString())
-        
+        await pLabel(newProducts.get("_id").toString(),newProducts.get("price").toString())     
         res.json(newProducts)
         
     }catch(error){
-
+        console.log(error)
     }
 }
 exports.pQuery= async (req,res)=>{
     try{
-        console.log(req.body._id)
         const product = await products.findOne({'_id':req.body._id})
-        res.json(product)
-        
+        res.json(product)       
     }catch(error){
         console.log(error)
 
@@ -54,13 +50,26 @@ exports.pQuery= async (req,res)=>{
 }
 exports.login = async(req,res)=>{
     const code = req.body.code
-    const appId = 'wxfda89aeb5375ff83'
-  const appSecret = 'd10a02f7b5f0e222ac80570ed80fc85e'
-
-  const url = `https://api.weixin.qq.com/sns/jscode2session?appid=${appId}&secret=${appSecret}&js_code=${code}&grant_type=authorization_code`
-
-  let result = await fly.get(url)
-  const userinfo = result.data
-    console.log(userinfo)
+    const url = wx.url.replace('1313ljj',code)
+    let result = await fly.get(url)
+    const userinfo = result.data
+    const user = {id:JSON.parse(userinfo).openid}
+    console.log(jwt.sign(user,mjwt.secret,mjwt.expiresIn))
+    res.json(jwt.sign(user,mjwt.secret,mjwt.expiresIn))
 }
+exports.authenticateToken=(req, res, next)=>{
+    const authHeader = req.headers['authorization'];
+    // 从请求头中获取'authorization'字段
+    const token = authHeader && authHeader.split(' ')[1];
+    if (token == null) return res.sendStatus(401);
+    // 如果没有token，则返回401
+
+    jwt.verify(token, 'your_secret_key', (err, user) => {
+        if (err) return res.sendStatus(403);
+        // 如果token验证失败，则返回403
+        req.user = user;
+        next();
+    });
+}
+
 module.exports = exports

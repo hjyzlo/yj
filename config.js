@@ -13,4 +13,12 @@ exports.Pinfo = {
     fontHeight:3,
     orientation:90
 }
+exports.wx = {
+    openid:["oyBpq5Ag-Mi94ffbsMieOxHi_gQ0",],
+    url:"https://api.weixin.qq.com/sns/jscode2session?appid=wxfda89aeb5375ff83&secret=d10a02f7b5f0e222ac80570ed80fc85e&js_code=1313ljj&grant_type=authorization_code"
+}
+exports.mjwt = {
+    secret :'1313ljj',
+    expiresIn:{ expiresIn: '1h' }
+}
 module.exports = exports
