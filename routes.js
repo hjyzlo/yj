@@ -1,5 +1,5 @@
 const express = require("express")
-const { pAdd, login, pQuery } = require("./op")
+const { pAdd, login, pQuery,authenticateToken } = require("./op")
 const route = express.Router()
 
 route.get("/",(req,res)=>{
@@ -7,5 +7,5 @@ route.get("/",(req,res)=>{
 })
 route.post("/",pAdd)
 route.post("/login",login)
-route.post("/pQuery",pQuery)
+route.post("/pQuery",authenticateToken,pQuery)
 module.exports = route
