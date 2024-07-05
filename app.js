@@ -6,6 +6,6 @@ const config = require("./config")
 
 const app = express()
 mongoose.connect(config.mongoUrl)
-app.use(bp.urlencoded({extended:true}))
+app.use(bp.json())
 app.use(route)
 app.listen(config.appPort)

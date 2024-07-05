@@ -1,6 +1,5 @@
 const mongoose = require("mongoose")
 const productsSchema = new mongoose.Schema({
-    code:{type:String,required:false},
     order:{type:String,required:false},
     cost:{type:Number,required:false},
     price:{type:Number,required:false},

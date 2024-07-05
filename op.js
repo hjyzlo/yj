@@ -2,6 +2,7 @@ const products = require("./models/products")
 const mongoose = require("mongoose")
 const {DTPWeb} = require("dtpweb")
 const {Pinfo} = require("./config")
+const fly = require("flyio")
 pLabel = async (_id,price)=>{
     let api = DTPWeb.getInstance();
     DTPWeb.checkServer((value) => {
@@ -42,15 +43,24 @@ exports.pAdd = async (req,res)=>{
 }
 exports.pQuery= async (req,res)=>{
     try{
-        console.log(req.body)
-        const newProducts = await products.findOne(req.body._id)
-        console.log(newProducts.get("_id").toString())
-        await pLabel(newProducts.get("_id").toString(),newProducts.get("price").toString())
-        
-        res.json(newProducts)
+        console.log(req.body._id)
+        const product = await products.findOne({'_id':req.body._id})
+        res.json(product)
         
     }catch(error){
+        console.log(error)
 
     }
+}
+exports.login = async(req,res)=>{
+    const code = req.body.code
+    const appId = 'wxfda89aeb5375ff83'
+  const appSecret = 'd10a02f7b5f0e222ac80570ed80fc85e'
+
+  const url = `https://api.weixin.qq.com/sns/jscode2session?appid=${appId}&secret=${appSecret}&js_code=${code}&grant_type=authorization_code`
+
+  let result = await fly.get(url)
+  const userinfo = result.data
+    console.log(userinfo)
 }
 module.exports = exports
