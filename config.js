@@ -21,4 +21,7 @@ exports.mjwt = {
     secret :'1313ljj',
     expiresIn:{ expiresIn: '1h' }
 }
+exports.ul = {
+    basedir:'imgs'
+}
 module.exports = exports

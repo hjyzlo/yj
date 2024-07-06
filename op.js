@@ -1,25 +1,20 @@
 const products = require("./models/products")
 const mongoose = require("mongoose")
 const {DTPWeb} = require("dtpweb")
-const {Pinfo,wx,mjwt} = require("./config")
+const {Pinfo,wx,mjwt,ul} = require("./config")
 const fly = require("flyio")
 const jwt = require("jsonwebtoken")
 const multer = require("multer")
 const storage = multer.diskStorage({
-    //保存路径
     destination: function (req, file, cb) {
-      cb(null, 'imgs')
-      //注意这里的文件路径,不是相对路径，直接填写从项目根路径开始写就行了
+      cb(null, ul.basedir)
     },
-    //保存在 destination 中的文件名
-    filename: function (req, file, cb) { 
-        console.log(file)   
-        console.log(req.body.user)
-      cb(null, file.fieldname + '-' + Date.now())
+    filename: function (req, file, cb) {
+        console.log(file) 
+      cb(null, req._id+req.body.get('ft'))
     }
   })
   exports.upload = multer({ storage: storage })
-
 pLabel = async (_id,price)=>{
     let api = DTPWeb.getInstance();
     DTPWeb.checkServer((value) => {
@@ -45,15 +40,19 @@ pLabel = async (_id,price)=>{
     });
 
 }
-exports.pAdd = async (req,res)=>{
+exports.pAdd = async (req,res,next)=>{
     try{
-        const newProducts = await products.create(req.body)
+        console.log(req.body)
+        const newProducts = await products.create(req.body.data)
+        req._id = newProducts.get("_id").toString()
         await pLabel(newProducts.get("_id").toString(),newProducts.get("price").toString())     
-        res.json(newProducts)
+        //res.json(newProducts)
+        req.newProducts = newProducts
         
     }catch(error){
         console.log(error)
     }
+    next()
 }
 exports.pQuery= async (req,res)=>{
     try{

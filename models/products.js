@@ -6,6 +6,7 @@ const productsSchema = new mongoose.Schema({
     cost:{type:Number,required:false},
     price:{type:Number,required:false},
     stat:{type:Boolean,required:false,default:true},
+    extend:{type:String,required:false},
     creatDate:{type:Date,required:false,default:Date.now},
 })
 module.exports = mongoose.model('products',productsSchema)

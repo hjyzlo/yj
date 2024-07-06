@@ -5,8 +5,9 @@ const route = express.Router()
 route.get("/",(req,res)=>{
     res.json({status:200})
 })
-route.post("/pAdd",authenticateToken,pAdd)
+route.post("/pAdd",pAdd,upload.single("singleFile"),(req,res)=>{
+    res.json(newProducts)
+})
 route.post("/login",login)
-route.post('/upload',upload.single("singleFile"))
 route.post("/pQuery",authenticateToken,pQuery)
 module.exports = route
