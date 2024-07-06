@@ -10,8 +10,9 @@ const storage = multer.diskStorage({
       cb(null, ul.basedir)
     },
     filename: function (req, file, cb) {
-        console.log(file) 
-      cb(null, req._id+req.body.get('ft'))
+        const {data,extend}  = req.body
+        pAdd(req)
+      cb(null, )
     }
   })
   exports.upload = multer({ storage: storage })
@@ -23,7 +24,8 @@ pLabel = async (_id,price)=>{
                 console.log("No Detected DothanTech Printer Helper!");
         }
     });
-    if (!api) return;
+    
+    if (!api) return ;
     api.openPrinter(Pinfo['printerName'], (success) => {
         if(success) {
             // 2. 创建一个指定大小的标签任务
@@ -35,24 +37,27 @@ pLabel = async (_id,price)=>{
             api.commitJob(() => {
                 // 5. 关闭已经打开的打印机
                 api.closePrinter();
+                return 1
             });
         }
     });
 
 }
-exports.pAdd = async (req,res,next)=>{
+exports.pAdd = async (req)=>{
     try{
-        console.log(req.body)
-        const newProducts = await products.create(req.body.data)
-        req._id = newProducts.get("_id").toString()
-        await pLabel(newProducts.get("_id").toString(),newProducts.get("price").toString())     
+        console.log()
+        const newProducts = await products.create(data)
+        const result = await pLabel(newProducts.get("_id").toString(),newProducts.get("price").toString())    
         //res.json(newProducts)
-        req.newProducts = newProducts
+        if(result!=1){
+
+        }
+        
+        req.p = newProducts
         
     }catch(error){
         console.log(error)
     }
-    next()
 }
 exports.pQuery= async (req,res)=>{
     try{
@@ -81,5 +86,7 @@ exports.authenticateToken=(req, res, next)=>{
         next();
     });
 }
-
+exports.test = (req,res)=>{
+    console.log(req.body)
+}
 module.exports = exports
