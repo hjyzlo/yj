@@ -10,9 +10,8 @@ const storage = multer.diskStorage({
       cb(null, ul.basedir)
     },
     filename: function (req, file, cb) {
-        const {data,extend}  = req.body
-        pAdd(req)
-      cb(null, )
+        req.filename = file.originalname
+      cb(null, file.originalname)
     }
   })
   exports.upload = multer({ storage: storage })
@@ -43,17 +42,16 @@ pLabel = async (_id,price)=>{
     });
 
 }
-exports.pAdd = async (req)=>{
+exports.pAdd = async (req,res)=>{
     try{
-        console.log()
-        const newProducts = await products.create(data)
+        const newProducts = await products.create(JSON.parse(req.body.data))
         const result = await pLabel(newProducts.get("_id").toString(),newProducts.get("price").toString())    
         //res.json(newProducts)
         if(result!=1){
 
         }
         
-        req.p = newProducts
+        req.json(newProducts)
         
     }catch(error){
         console.log(error)
@@ -87,6 +85,6 @@ exports.authenticateToken=(req, res, next)=>{
     });
 }
 exports.test = (req,res)=>{
-    console.log(req.body)
+    console.log(Date.now())
 }
 module.exports = exports
