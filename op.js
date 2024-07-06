@@ -14,6 +14,7 @@ const storage = multer.diskStorage({
     //保存在 destination 中的文件名
     filename: function (req, file, cb) { 
         console.log(file)   
+        console.log(req.body.user)
       cb(null, file.fieldname + '-' + Date.now())
     }
   })
