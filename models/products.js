@@ -1,6 +1,8 @@
 const mongoose = require("mongoose")
 const productsSchema = new mongoose.Schema({
-    order:{type:String,required:false},
+    order:{type:Number,required:false},
+    code:{type:String,required:false},
+    type:{type:Number,required:false},
     cost:{type:Number,required:false},
     price:{type:Number,required:false},
     stat:{type:Boolean,required:false,default:true},

@@ -4,6 +4,21 @@ const {DTPWeb} = require("dtpweb")
 const {Pinfo,wx,mjwt} = require("./config")
 const fly = require("flyio")
 const jwt = require("jsonwebtoken")
+const multer = require("multer")
+const storage = multer.diskStorage({
+    //保存路径
+    destination: function (req, file, cb) {
+      cb(null, 'imgs')
+      //注意这里的文件路径,不是相对路径，直接填写从项目根路径开始写就行了
+    },
+    //保存在 destination 中的文件名
+    filename: function (req, file, cb) { 
+        console.log(file)   
+      cb(null, file.fieldname + '-' + Date.now())
+    }
+  })
+  exports.upload = multer({ storage: storage })
+
 pLabel = async (_id,price)=>{
     let api = DTPWeb.getInstance();
     DTPWeb.checkServer((value) => {

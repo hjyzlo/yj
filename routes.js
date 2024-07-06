@@ -1,5 +1,5 @@
 const express = require("express")
-const { pAdd, login, pQuery } = require("./op")
+const { pAdd, login, pQuery ,upload} = require("./op")
 const route = express.Router()
 
 route.get("/",(req,res)=>{
@@ -8,4 +8,5 @@ route.get("/",(req,res)=>{
 route.post("/",pAdd)
 route.post("/login",login)
 route.post("/pQuery",pQuery)
+route.post('/upload',upload.single("singleFile"))
 module.exports = route
