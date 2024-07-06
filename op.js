@@ -64,26 +64,20 @@ exports.pQuery= async (req,res)=>{
     }
 }
 exports.login = async(req,res)=>{
-    console.log(req.headers)
     const code = req.body.code
     const url = wx.url.replace('1313ljj',code)
     let result = await fly.get(url)
     const userinfo = result.data
-    const user = {id:JSON.parse(userinfo).openid}
-    console.log(jwt.sign(user,mjwt.secret,mjwt.expiresIn))
+    const openid = JSON.parse(userinfo).openid
+    const user = {id:openid}
     res.json(jwt.sign(user,mjwt.secret,mjwt.expiresIn))
 }
 exports.authenticateToken=(req, res, next)=>{
-    const authHeader = req.headers['authorization'];
-    // 从请求头中获取'authorization'字段
-    const token = authHeader && authHeader.split(' ')[1];
+    const token = req.headers.token;
+    console.log(token)
     if (token == null) return res.sendStatus(401);
-    // 如果没有token，则返回401
-
-    jwt.verify(token, 'your_secret_key', (err, user) => {
-        if (err) return res.sendStatus(403);
-        // 如果token验证失败，则返回403
-        req.user = user;
+    jwt.verify(token, mjwt.secret, (err, data) => {
+        if (err || wx.openid.indexOf(data.id)) return res.sendStatus(403);
         next();
     });
 }
