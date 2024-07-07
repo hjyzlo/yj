@@ -9,4 +9,5 @@ route.post("/pAdd",upload.single("singleFile"),pAdd)
 route.post("/login",login)
 route.post("/pQuery",authenticateToken,pQuery)
 route.post('/test',test)
+route.get('/test',test)
 module.exports = route
