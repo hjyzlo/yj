@@ -93,7 +93,8 @@ exports.authenticateToken=(req, res, next)=>{
 }
 exports.test = (req,res)=>{
     //products.findOne({}).then(data=>res.json(data))
-    products.find().limit(3).skip(req.body.skip).then(data=>res.end(data.toString()))
+    console.log(req.body.skip)
+    products.find().limit(3).skip(req.body.skip).then(data=>res.json(JSON.stringify(data)))
     
 }
 module.exports = exports
