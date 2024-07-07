@@ -5,6 +5,7 @@ const mongoose = require("mongoose")
 const config = require("./config")
 
 const app = express()
+mongoose.set('strictQuery', true)
 mongoose.connect(config.mongoUrl)
 app.use(bp.json())
 app.use(bp.urlencoded({extended:false}))
