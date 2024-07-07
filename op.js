@@ -5,13 +5,19 @@ const {Pinfo,wx,mjwt,ul} = require("./config")
 const fly = require("flyio")
 const jwt = require("jsonwebtoken")
 const multer = require("multer")
+const uuid = require("uuid")
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, ul.basedir)
+        cb(null, ul.basedir)
     },
     filename: function (req, file, cb) {
-        req.filename = file.originalname
-      cb(null, file.originalname)
+        const origin = file.originalname;
+        let extension = origin.substr(origin.lastIndexOf('.') + 1);
+        extension = extension.toLowerCase();
+        const main = uuid.v1();
+        const imgUrl = main + '.' + extension;
+        req.imgUrl = imgUrl
+        cb(null, imgUrl)
     }
   })
   exports.upload = multer({ storage: storage })
@@ -44,11 +50,11 @@ pLabel = async (_id,price)=>{
 }
 exports.pAdd = async (req,res)=>{
     try{
-        const newProducts = await products.create(JSON.parse(req.body.data))
-        const result = await pLabel(newProducts.get("_id").toString(),newProducts.get("price").toString())    
-        //res.json(newProducts)
+        const newProducts = await products.create({...JSON.parse(req.body.data),'imgUrl':req.imgUrl})
+        const _id = newProducts.get("_id").toString()
+        const result = await pLabel(_id,newProducts.get("price").toString())    
         if(result!=1){
-
+            products.up
         }
         
         req.json(newProducts)
