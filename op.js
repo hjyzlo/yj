@@ -55,9 +55,10 @@ exports.pAdd = async (req,res)=>{
         const result = await pLabel(_id,newProducts.get("price").toString())    
         if(result!=1){
            // products.remove({'_id':_id})
+           
         }
         
-        req.json(newProducts)
+        res.json(newProducts)
         
     }catch(error){
         console.log(error)
@@ -91,6 +92,7 @@ exports.authenticateToken=(req, res, next)=>{
     });
 }
 exports.test = (req,res)=>{
-    console.log(Date.now())
+    const a = products.find().limit(3).skip(40).then(data=>{console.log(data)})
+    res.end("xx")
 }
 module.exports = exports
