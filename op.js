@@ -54,7 +54,7 @@ exports.pAdd = async (req,res)=>{
         const _id = newProducts.get("_id").toString()
         const result = await pLabel(_id,newProducts.get("price").toString())    
         if(result!=1){
-            products.up
+           // products.remove({'_id':_id})
         }
         
         req.json(newProducts)
