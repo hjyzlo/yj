@@ -52,11 +52,11 @@ exports.pAdd = async (req,res)=>{
     try{
         const newProducts = await products.create({...JSON.parse(req.body.data),'imgUrl':req.imgUrl})
         const _id = newProducts.get("_id").toString()
-        const result = await pLabel(_id,newProducts.get("price").toString())    
-        if(result!=1){
+        //const result = await pLabel(_id,newProducts.get("price").toString())    
+       // if(result!=1){
            // products.remove({'_id':_id})
            
-        }
+        //}
         
         res.json(newProducts)
         
