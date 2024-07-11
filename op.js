@@ -29,11 +29,12 @@ pLabel = async (_id,price)=>{
                 console.log("No Detected DothanTech Printer Helper!");
         }
     });
-    
+
     if (!api) return ;
     api.openPrinter(Pinfo['printerName'], (success) => {
         if(success) {
             // 2. 创建一个指定大小的标签任务
+            console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
             api.startJob({width: Pinfo['labelWidth'], height: Pinfo['labelHeight']});
             // 3. 在标签纸上打印目标字符串
             api.drawText({text:'￥' + price, x:Pinfo['textX'],y:Pinfo['textY'],fontHeight:Pinfo['fontHeight'],orientation:Pinfo['orientation']});
@@ -42,27 +43,22 @@ pLabel = async (_id,price)=>{
             api.commitJob(() => {
                 // 5. 关闭已经打开的打印机
                 api.closePrinter();
-                return 1
             });
+            return 1
         }
     });
 
 }
 exports.pAdd = async (req,res)=>{
-    try{
         const newProducts = await products.create({...JSON.parse(req.body.data),'imgUrl':req.imgUrl})
         const _id = newProducts.get("_id").toString()
-        //const result = await pLabel(_id,newProducts.get("price").toString())    
-       // if(result!=1){
-           // products.remove({'_id':_id})
-           
-        //}
-        
+        // const result = await pLabel(_id,newProducts.get("price").toString())  
+        // if(result!=1){
+        //     products.deleteOne({'_id':_id})
+
+        // }
         res.json(newProducts)
-        
-    }catch(error){
-        console.log(error)
-    }
+
 }
 exports.pQuery= async (req,res)=>{
     try{
