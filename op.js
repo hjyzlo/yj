@@ -1,4 +1,5 @@
 const products = require("./models/products")
+const orders = require("./models/orders")
 const mongoose = require("mongoose")
 const {DTPWeb} = require("dtpweb")
 const {Pinfo,wx,mjwt,ul} = require("./config")
@@ -62,11 +63,9 @@ exports.pAdd = async (req,res)=>{
 }
 exports.pQuery= async (req,res)=>{
     try{
-        const product = await products.findOne({'_id':req.body._id})
-        res.json(product)       
+        await products.find().limit(10).skip(req.body.skip).then(data=>res.json(JSON.stringify(data)))      
     }catch(error){
         console.log(error)
-
     }
 }
 exports.login = async(req,res)=>{
@@ -90,7 +89,7 @@ exports.authenticateToken=(req, res, next)=>{
 exports.test = (req,res)=>{
     //products.findOne({}).then(data=>res.json(data))
     console.log(req.body.skip)
-    products.find().limit(10).skip(req.body.skip).then(data=>res.json(JSON.stringify(data)))
+    
     
 }
 module.exports = exports
