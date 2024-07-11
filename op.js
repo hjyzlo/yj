@@ -87,8 +87,8 @@ exports.authenticateToken=(req, res, next)=>{
     });
 }
 exports.test = (req,res)=>{
-    //products.findOne({}).then(data=>res.json(data))
-    console.log(req.body.skip)
+    orders.create({orderName:'红衣格'}).then(data=>{products.create({order:data._id,type:1,price:1}).then(data=>{products.findById(data._id).populate('order').then(data=>{res.json(data)})})})
+    
     
     
 }

@@ -1,8 +1,8 @@
 const mongoose = require("mongoose")
 const productsSchema = new mongoose.Schema({
-    order:{type:Number,required:true},
+    order:{type:mongoose.Schema.Types.ObjectId,ref:'orders',required:true},
     code:{type:String,required:false},
-    type:{type:mongoose.Schema.Types.ObjectId,required:true},
+    type:{type:Number,required:true},
     cost:{type:Number,required:false},
     price:{type:Number,required:true},
     stat:{type:Boolean,required:false,default:true},
