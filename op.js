@@ -93,10 +93,13 @@ exports.authenticateToken=(req, res, next)=>{
         next();
     });
 }
-exports.test = (req,res)=>{
+exports.test1 = (req,res)=>{
     orders.create({orderName:'红衣格'}).then(data=>{products.create({order:data._id,type:1,price:1}).then(data=>{products.findById(data._id).populate('order').then(data=>{res.json(data)})})})
     
     
     
+}
+exports.test = (req,res)=>{
+    products.find().limit(10).skip(req.body.skip).then(data=>res.json(JSON.stringify(data)))
 }
 module.exports = exports
