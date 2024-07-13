@@ -68,6 +68,13 @@ exports.pQuery= async (req,res)=>{
         console.log(error)
     }
 }
+exports.oQuery= async (req,res)=>{
+    try{
+        await orders.find().then(data=>res.json(JSON.stringify(data)))      
+    }catch(error){
+        console.log(error)
+    }
+}
 exports.login = async(req,res)=>{
     const code = req.body.code
     const url = wx.url.replace('1313ljj',code)
