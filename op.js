@@ -43,7 +43,7 @@ pLabel = async (_id,price)=>{
             // 4. 结束绘制操作，开始打印
             api.commitJob(() => {
                 // 5. 关闭已经打开的打印机
-                return api.closePrinter()
+                api.closePrinter()
             });
         }
     });
@@ -52,18 +52,8 @@ pLabel = async (_id,price)=>{
 exports.pAdd = async (req,res)=>{
         const newProducts = await products.create({...JSON.parse(req.body.data),'imgUrl':req.imgUrl})
         const _id = newProducts.get("_id").toString()
-        const result = await pLabel(_id,newProducts.get("price").toString())  
-        if(result!=true){
-            const filename = './' + ul.basedir + '/' + req.imgUrl
-            fs.unlinkSync(filename)
-            products.deleteOne({'_id':_id}).then(data=>res.sendStatus(404))
-            
-                   
-        }else{
-            res.sendStatus(200).json(newProducts)
-        }
-        
-
+        await pLabel(_id,newProducts.get("price").toString())  
+        res.sendStatus(200).json(newProducts)
 }
 exports.pQuery= async (req,res)=>{
     try{
@@ -74,7 +64,9 @@ exports.pQuery= async (req,res)=>{
 }
 exports.oQuery= async (req,res)=>{
     try{
-        await orders.find().then(data=>res.json(JSON.stringify(data)))      
+        await orders.find().then(data=>{
+            res.json(JSON.stringify(data))
+        })      
     }catch(error){
         console.log(error)
     }
@@ -85,6 +77,7 @@ exports.login = async(req,res)=>{
     let result = await fly.get(url)
     const userinfo = result.data
     const openid = JSON.parse(userinfo).openid
+    console.log(openid)
     const user = {id:openid}
     res.json(jwt.sign(user,mjwt.secret,mjwt.expiresIn))
 }
