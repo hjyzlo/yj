@@ -7,6 +7,7 @@ const fly = require("flyio")
 const jwt = require("jsonwebtoken")
 const multer = require("multer")
 const uuid = require("uuid")
+const fs = require("fs")
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, ul.basedir)
@@ -35,7 +36,6 @@ pLabel = async (_id,price)=>{
     api.openPrinter(Pinfo['printerName'], (success) => {
         if(success) {
             // 2. 创建一个指定大小的标签任务
-            console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
             api.startJob({width: Pinfo['labelWidth'], height: Pinfo['labelHeight']});
             // 3. 在标签纸上打印目标字符串
             api.drawText({text:'￥' + price, x:Pinfo['textX'],y:Pinfo['textY'],fontHeight:Pinfo['fontHeight'],orientation:Pinfo['orientation']});
@@ -43,9 +43,8 @@ pLabel = async (_id,price)=>{
             // 4. 结束绘制操作，开始打印
             api.commitJob(() => {
                 // 5. 关闭已经打开的打印机
-                api.closePrinter();
+                return api.closePrinter()
             });
-            return 1
         }
     });
 
@@ -53,17 +52,22 @@ pLabel = async (_id,price)=>{
 exports.pAdd = async (req,res)=>{
         const newProducts = await products.create({...JSON.parse(req.body.data),'imgUrl':req.imgUrl})
         const _id = newProducts.get("_id").toString()
-        // const result = await pLabel(_id,newProducts.get("price").toString())  
-        // if(result!=1){
-        //     products.deleteOne({'_id':_id})
-
-        // }
-        res.json(newProducts)
+        const result = await pLabel(_id,newProducts.get("price").toString())  
+        if(result!=true){
+            const filename = './' + ul.basedir + '/' + req.imgUrl
+            fs.unlinkSync(filename)
+            products.deleteOne({'_id':_id})  
+            res.sendStatus(404)
+                   
+        }else{
+            res.sendStatus(200).json(newProducts)
+        }
+        
 
 }
 exports.pQuery= async (req,res)=>{
     try{
-        await products.find().limit(10).skip(req.body.skip).then(data=>res.json(JSON.stringify(data)))      
+        await products.find(req.body.query).populate('order').limit(10).skip(req.body.skip).then(data=>res.json(JSON.stringify(data)))      
     }catch(error){
         console.log(error)
     }
@@ -91,14 +95,5 @@ exports.authenticateToken=(req, res, next)=>{
         if (err || wx.openid.indexOf(data.id)) return res.sendStatus(403);
         next();
     });
-}
-exports.test1 = (req,res)=>{
-    orders.create({orderName:'红衣格'}).then(data=>{products.create({order:data._id,type:1,price:1}).then(data=>{products.findById(data._id).populate('order').then(data=>{res.json(data)})})})
-    
-    
-    
-}
-exports.test = (req,res)=>{
-    products.find().limit(10).skip(req.body.skip).then(data=>res.json(JSON.stringify(data)))
 }
 module.exports = exports
