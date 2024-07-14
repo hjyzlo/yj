@@ -7,7 +7,6 @@ const fly = require("flyio")
 const jwt = require("jsonwebtoken")
 const multer = require("multer")
 const uuid = require("uuid")
-const fs = require("fs")
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, ul.basedir)
@@ -88,5 +87,8 @@ exports.authenticateToken=(req, res, next)=>{
         if (err || wx.openid.indexOf(data.id)) return res.sendStatus(403);
         next();
     });
+}
+exports.checkToken =(req,res)=>{
+    res.sendStatus(200)
 }
 module.exports = exports
