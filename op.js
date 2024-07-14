@@ -86,7 +86,6 @@ exports.login = async(req,res)=>{
 }
 exports.authenticateToken=(req, res, next)=>{
     const token = req.headers.token;
-    console.log(token)
     if (token == null) return res.sendStatus(401);
     jwt.verify(token, mjwt.secret, (err, data) => {
         if (err || wx.openid.indexOf(data.id)) return res.sendStatus(403);
