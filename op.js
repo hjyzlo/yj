@@ -56,8 +56,8 @@ exports.pAdd = async (req,res)=>{
         if(result!=true){
             const filename = './' + ul.basedir + '/' + req.imgUrl
             fs.unlinkSync(filename)
-            products.deleteOne({'_id':_id})  
-            res.sendStatus(404)
+            products.deleteOne({'_id':_id}).then(data=>res.sendStatus(404))
+            
                    
         }else{
             res.sendStatus(200).json(newProducts)
