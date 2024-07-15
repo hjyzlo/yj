@@ -1,0 +1,75 @@
+oyBpq5Ag-Mi94ffbsMieOxHi_gQ0
+oyBpq5Ag-Mi94ffbsMieOxHi_gQ0
+[12:42:18.244]: $$$$ DTPWEB request: checkPort(15216) $$$$
+
+[12:42:18.245]: $$$$ DTPWEB request: OpenPrinter $$$$
+{
+  action: 'OpenPrinter',
+  ip: undefined,
+  port: undefined,
+  deviceType: undefined,
+  timeout: 8000,
+  async: true,
+  callback: [Function: callback]
+}
+{ name: 'P1S', callback: [Function (anonymous)] }
+========
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:363:5)
+    at ServerResponse.setHeader (node:_http_outgoing:574:11)
+    at ServerResponse.header (d:\yj1\node_modules\express\lib\response.js:795:10)
+    at ServerResponse.send (d:\yj1\node_modules\express\lib\response.js:175:12)
+    at ServerResponse.json (d:\yj1\node_modules\express\lib\response.js:279:15)
+    at exports.pAdd (d:\yj1\op.js:55:29)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+========
+[12:42:18.286]: #### onResponse: checkPort(15216) ####
+{
+  statusCode: 0,
+  resultInfo: {
+    version: 'dtpweb/2.3.20230621',
+    httpPort: 15216,
+    udpPort: 15216,
+    supportListDir: false,
+    system: {
+      osName: 'Windows 10',
+      osVersion: '10.00',
+      osServicePack: '00.00',
+      osPlatformId: 2,
+      osProductType: 1
+    },
+    hostname: 'latou',
+    selfIps: [ '192.168.10.148' ],
+    runMode: 1,
+    processId: 5304,
+    now: '2024-07-15 12:42:18.249'
+  }
+}
+★★★ 打印助手运行正常 ★★★
+[12:42:18.286]: #### onResponse: OpenPrinter ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[12:42:18.287]: $$$$ DTPWEB request: Print $$$$
+{
+  action: 'Print',
+  timeout: 60000,
+  contentType: 2,
+  params: { action: 4096 },
+  data: {
+    jobPages: [ [Array] ],
+    jobInfo: { jobWidth: 25, jobHeight: 15, orientation: undefined },
+    printerInfo: { printerName: 'P1S' },
+    async: undefined,
+    callback: [Function: callback]
+  },
+  async: undefined,
+  callback: [Function: callback]
+}
+[12:42:18.574]: #### onResponse: Print ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[12:42:18.574]: $$$$ DTPWEB request: ClosePrinter $$$$
+{ action: 'ClosePrinter' }
+[12:42:18.576]: #### onResponse: ClosePrinter ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+oyBpq5PNcdUttS5PI4Ydcyb058dA

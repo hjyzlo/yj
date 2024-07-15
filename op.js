@@ -7,6 +7,11 @@ const fly = require("flyio")
 const jwt = require("jsonwebtoken")
 const multer = require("multer")
 const uuid = require("uuid")
+const fs = require("fs")
+const Console = require("console").Console
+const output = fs.createWriteStream('./stdout.log');
+const errorOutput = fs.createWriteStream('./stderr.log');
+const logger = new Console({ stdout: output, stderr: errorOutput });
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, ul.basedir)
@@ -76,7 +81,7 @@ exports.login = async(req,res)=>{
     let result = await fly.get(url)
     const userinfo = result.data
     const openid = JSON.parse(userinfo).openid
-    console.log(openid)
+    logger.log(openid)
     const user = {id:openid}
     res.json(jwt.sign(user,mjwt.secret,mjwt.expiresIn))
 }
@@ -84,7 +89,9 @@ exports.authenticateToken=(req, res, next)=>{
     const token = req.headers.token;
     if (token == null) return res.sendStatus(401);
     jwt.verify(token, mjwt.secret, (err, data) => {
-        if (err || wx.openid.indexOf(data.id)) return res.sendStatus(403);
+        if (err || wx.openid.indexOf(data.id)==-1) {
+            return res.sendStatus(403);
+        }
         next();
     });
 }
