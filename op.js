@@ -72,7 +72,6 @@ exports.oQuery= async (req,res)=>{
 }
 exports.login = async(req,res)=>{
     const code = req.body.code
-    console.log(code)
     const url = wx.url.replace('1313ljj',code)
     let result = await fly.get(url)
     const userinfo = result.data
