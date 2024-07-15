@@ -89,7 +89,4 @@ exports.authenticateToken=(req, res, next)=>{
         next();
     });
 }
-exports.checkToken =(req,res)=>{
-    res.sendStatus(200)
-}
 module.exports = exports
