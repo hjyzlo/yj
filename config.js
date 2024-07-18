@@ -4,13 +4,13 @@ exports.Pinfo = {
     printerName:'P1S',
     qrcodeX:1,
     qrcodeY:1,
-    textX:20,
+    textX:22,
     textY:1,
     labelWidth:25,
     labelHeight:15,
     margin:1,
     qrcodeWidth:13,
-    fontHeight:3,
+    fontHeight:6,
     orientation:90
 }
 exports.wx = {
@@ -19,7 +19,7 @@ exports.wx = {
 }
 exports.mjwt = {
     secret :'1313ljj',
-    expiresIn:{ expiresIn: '1h' }
+    expiresIn:{ expiresIn: '1d' }
 }
 exports.ul = {
     basedir:'imgs'

@@ -1,0 +1,1181 @@
+[19:26:48.699]: $$$$ DTPWEB request: checkPort(15216) $$$$
+
+[19:26:48.700]: $$$$ DTPWEB request: OpenPrinter $$$$
+{
+  action: 'OpenPrinter',
+  ip: undefined,
+  port: undefined,
+  deviceType: undefined,
+  timeout: 8000,
+  async: true,
+  callback: [Function: callback]
+}
+{ name: 'P1S', callback: [Function (anonymous)] }
+========
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:363:5)
+    at ServerResponse.setHeader (node:_http_outgoing:574:11)
+    at ServerResponse.header (d:\yj1\node_modules\express\lib\response.js:795:10)
+    at ServerResponse.send (d:\yj1\node_modules\express\lib\response.js:175:12)
+    at ServerResponse.json (d:\yj1\node_modules\express\lib\response.js:279:15)
+    at exports.pAdd (d:\yj1\op.js:60:29)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+========
+[19:26:48.725]: #### onResponse: checkPort(15216) ####
+{
+  statusCode: 0,
+  resultInfo: {
+    version: 'dtpweb/2.3.20230621',
+    httpPort: 15216,
+    udpPort: 15216,
+    supportListDir: false,
+    system: {
+      osName: 'Windows 10',
+      osVersion: '10.00',
+      osServicePack: '00.00',
+      osPlatformId: 2,
+      osProductType: 1
+    },
+    hostname: 'latou',
+    selfIps: [ '192.168.10.148' ],
+    runMode: 1,
+    processId: 5304,
+    now: '2024-07-15 19:26:48.705'
+  }
+}
+★★★ 打印助手运行正常 ★★★
+[19:26:48.726]: #### onResponse: OpenPrinter ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[19:26:48.727]: $$$$ DTPWEB request: Print $$$$
+{
+  action: 'Print',
+  timeout: 60000,
+  contentType: 2,
+  params: { action: 4096 },
+  data: {
+    jobPages: [ [Array] ],
+    jobInfo: { jobWidth: 25, jobHeight: 15, orientation: undefined },
+    printerInfo: { printerName: 'P1S' },
+    async: undefined,
+    callback: [Function: callback]
+  },
+  async: undefined,
+  callback: [Function: callback]
+}
+[19:26:48.818]: #### onResponse: Print ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[19:26:48.818]: $$$$ DTPWEB request: ClosePrinter $$$$
+{ action: 'ClosePrinter' }
+[19:26:48.819]: #### onResponse: ClosePrinter ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+========
+Error: products validation failed: order: Cast to ObjectId failed for value "-1" (type number) at path "order" because of "BSONTypeError"
+    at ValidationError.inspect (d:\yj1\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:758:19)
+    at inspect (node:internal/util/inspect:337:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2001:40)
+    at formatWithOptions (node:internal/util/inspect:1883:10)
+    at console.value (node:internal/console/constructor:327:14)
+    at console.log (node:internal/console/constructor:363:61)
+    at process.<anonymous> (d:\yj1\app.js:15:13)
+    at process.emit (node:events:365:28)
+    at emit (node:internal/process/promises:136:22) {
+  errors: {
+    order: CastError: Cast to ObjectId failed for value "-1" (type number) at path "order" because of "BSONTypeError"
+        at ObjectId.cast (d:\yj1\node_modules\mongoose\lib\schema\objectid.js:248:11)
+        at ObjectId.SchemaType.applySetters (d:\yj1\node_modules\mongoose\lib\schematype.js:1201:12)
+        at model.$set (d:\yj1\node_modules\mongoose\lib\document.js:1421:22)
+        at model.$set (d:\yj1\node_modules\mongoose\lib\document.js:1146:16)
+        at model.Document (d:\yj1\node_modules\mongoose\lib\document.js:166:12)
+        at model.Model (d:\yj1\node_modules\mongoose\lib\model.js:121:12)
+        at new model (d:\yj1\node_modules\mongoose\lib\model.js:5039:15)
+        at d:\yj1\node_modules\mongoose\lib\model.js:3187:22
+        at d:\yj1\node_modules\mongoose\lib\model.js:3222:7
+        at Array.forEach (<anonymous>) {
+      stringValue: '"-1"',
+      messageFormat: undefined,
+      kind: 'ObjectId',
+      value: -1,
+      path: 'order',
+      reason: BSONTypeError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer
+          at new BSONTypeError (d:\yj1\node_modules\bson\lib\error.js:41:28)
+          at new ObjectId (d:\yj1\node_modules\bson\lib\objectid.js:67:23)
+          at castObjectId (d:\yj1\node_modules\mongoose\lib\cast\objectid.js:25:12)
+          at ObjectId.cast (d:\yj1\node_modules\mongoose\lib\schema\objectid.js:246:12)
+          at ObjectId.SchemaType.applySetters (d:\yj1\node_modules\mongoose\lib\schematype.js:1201:12)
+          at model.$set (d:\yj1\node_modules\mongoose\lib\document.js:1421:22)
+          at model.$set (d:\yj1\node_modules\mongoose\lib\document.js:1146:16)
+          at model.Document (d:\yj1\node_modules\mongoose\lib\document.js:166:12)
+          at model.Model (d:\yj1\node_modules\mongoose\lib\model.js:121:12)
+          at new model (d:\yj1\node_modules\mongoose\lib\model.js:5039:15),
+      valueType: 'number'
+    }
+  },
+  _message: 'products validation failed'
+}
+========
+========
+Error: products validation failed: order: Cast to ObjectId failed for value "-1" (type number) at path "order" because of "BSONTypeError"
+    at ValidationError.inspect (d:\yj1\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:758:19)
+    at inspect (node:internal/util/inspect:337:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2001:40)
+    at formatWithOptions (node:internal/util/inspect:1883:10)
+    at console.value (node:internal/console/constructor:327:14)
+    at console.log (node:internal/console/constructor:363:61)
+    at process.<anonymous> (d:\yj1\app.js:15:13)
+    at process.emit (node:events:365:28)
+    at emit (node:internal/process/promises:136:22) {
+  errors: {
+    order: CastError: Cast to ObjectId failed for value "-1" (type number) at path "order" because of "BSONTypeError"
+        at ObjectId.cast (d:\yj1\node_modules\mongoose\lib\schema\objectid.js:248:11)
+        at ObjectId.SchemaType.applySetters (d:\yj1\node_modules\mongoose\lib\schematype.js:1201:12)
+        at model.$set (d:\yj1\node_modules\mongoose\lib\document.js:1421:22)
+        at model.$set (d:\yj1\node_modules\mongoose\lib\document.js:1146:16)
+        at model.Document (d:\yj1\node_modules\mongoose\lib\document.js:166:12)
+        at model.Model (d:\yj1\node_modules\mongoose\lib\model.js:121:12)
+        at new model (d:\yj1\node_modules\mongoose\lib\model.js:5039:15)
+        at d:\yj1\node_modules\mongoose\lib\model.js:3187:22
+        at d:\yj1\node_modules\mongoose\lib\model.js:3222:7
+        at Array.forEach (<anonymous>) {
+      stringValue: '"-1"',
+      messageFormat: undefined,
+      kind: 'ObjectId',
+      value: -1,
+      path: 'order',
+      reason: BSONTypeError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer
+          at new BSONTypeError (d:\yj1\node_modules\bson\lib\error.js:41:28)
+          at new ObjectId (d:\yj1\node_modules\bson\lib\objectid.js:67:23)
+          at castObjectId (d:\yj1\node_modules\mongoose\lib\cast\objectid.js:25:12)
+          at ObjectId.cast (d:\yj1\node_modules\mongoose\lib\schema\objectid.js:246:12)
+          at ObjectId.SchemaType.applySetters (d:\yj1\node_modules\mongoose\lib\schematype.js:1201:12)
+          at model.$set (d:\yj1\node_modules\mongoose\lib\document.js:1421:22)
+          at model.$set (d:\yj1\node_modules\mongoose\lib\document.js:1146:16)
+          at model.Document (d:\yj1\node_modules\mongoose\lib\document.js:166:12)
+          at model.Model (d:\yj1\node_modules\mongoose\lib\model.js:121:12)
+          at new model (d:\yj1\node_modules\mongoose\lib\model.js:5039:15),
+      valueType: 'number'
+    }
+  },
+  _message: 'products validation failed'
+}
+========
+========
+Error: products validation failed: order: Cast to ObjectId failed for value "-1" (type number) at path "order" because of "BSONTypeError"
+    at ValidationError.inspect (d:\yj1\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:758:19)
+    at inspect (node:internal/util/inspect:337:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2001:40)
+    at formatWithOptions (node:internal/util/inspect:1883:10)
+    at console.value (node:internal/console/constructor:327:14)
+    at console.log (node:internal/console/constructor:363:61)
+    at process.<anonymous> (d:\yj1\app.js:15:13)
+    at process.emit (node:events:365:28)
+    at emit (node:internal/process/promises:136:22) {
+  errors: {
+    order: CastError: Cast to ObjectId failed for value "-1" (type number) at path "order" because of "BSONTypeError"
+        at ObjectId.cast (d:\yj1\node_modules\mongoose\lib\schema\objectid.js:248:11)
+        at ObjectId.SchemaType.applySetters (d:\yj1\node_modules\mongoose\lib\schematype.js:1201:12)
+        at model.$set (d:\yj1\node_modules\mongoose\lib\document.js:1421:22)
+        at model.$set (d:\yj1\node_modules\mongoose\lib\document.js:1146:16)
+        at model.Document (d:\yj1\node_modules\mongoose\lib\document.js:166:12)
+        at model.Model (d:\yj1\node_modules\mongoose\lib\model.js:121:12)
+        at new model (d:\yj1\node_modules\mongoose\lib\model.js:5039:15)
+        at d:\yj1\node_modules\mongoose\lib\model.js:3187:22
+        at d:\yj1\node_modules\mongoose\lib\model.js:3222:7
+        at Array.forEach (<anonymous>) {
+      stringValue: '"-1"',
+      messageFormat: undefined,
+      kind: 'ObjectId',
+      value: -1,
+      path: 'order',
+      reason: BSONTypeError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer
+          at new BSONTypeError (d:\yj1\node_modules\bson\lib\error.js:41:28)
+          at new ObjectId (d:\yj1\node_modules\bson\lib\objectid.js:67:23)
+          at castObjectId (d:\yj1\node_modules\mongoose\lib\cast\objectid.js:25:12)
+          at ObjectId.cast (d:\yj1\node_modules\mongoose\lib\schema\objectid.js:246:12)
+          at ObjectId.SchemaType.applySetters (d:\yj1\node_modules\mongoose\lib\schematype.js:1201:12)
+          at model.$set (d:\yj1\node_modules\mongoose\lib\document.js:1421:22)
+          at model.$set (d:\yj1\node_modules\mongoose\lib\document.js:1146:16)
+          at model.Document (d:\yj1\node_modules\mongoose\lib\document.js:166:12)
+          at model.Model (d:\yj1\node_modules\mongoose\lib\model.js:121:12)
+          at new model (d:\yj1\node_modules\mongoose\lib\model.js:5039:15),
+      valueType: 'number'
+    }
+  },
+  _message: 'products validation failed'
+}
+========
+========
+Error: products validation failed: order: Cast to ObjectId failed for value "-1" (type number) at path "order" because of "BSONTypeError"
+    at ValidationError.inspect (d:\yj1\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:758:19)
+    at inspect (node:internal/util/inspect:337:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2001:40)
+    at formatWithOptions (node:internal/util/inspect:1883:10)
+    at console.value (node:internal/console/constructor:327:14)
+    at console.log (node:internal/console/constructor:363:61)
+    at process.<anonymous> (d:\yj1\app.js:15:13)
+    at process.emit (node:events:365:28)
+    at emit (node:internal/process/promises:136:22) {
+  errors: {
+    order: CastError: Cast to ObjectId failed for value "-1" (type number) at path "order" because of "BSONTypeError"
+        at ObjectId.cast (d:\yj1\node_modules\mongoose\lib\schema\objectid.js:248:11)
+        at ObjectId.SchemaType.applySetters (d:\yj1\node_modules\mongoose\lib\schematype.js:1201:12)
+        at model.$set (d:\yj1\node_modules\mongoose\lib\document.js:1421:22)
+        at model.$set (d:\yj1\node_modules\mongoose\lib\document.js:1146:16)
+        at model.Document (d:\yj1\node_modules\mongoose\lib\document.js:166:12)
+        at model.Model (d:\yj1\node_modules\mongoose\lib\model.js:121:12)
+        at new model (d:\yj1\node_modules\mongoose\lib\model.js:5039:15)
+        at d:\yj1\node_modules\mongoose\lib\model.js:3187:22
+        at d:\yj1\node_modules\mongoose\lib\model.js:3222:7
+        at Array.forEach (<anonymous>) {
+      stringValue: '"-1"',
+      messageFormat: undefined,
+      kind: 'ObjectId',
+      value: -1,
+      path: 'order',
+      reason: BSONTypeError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer
+          at new BSONTypeError (d:\yj1\node_modules\bson\lib\error.js:41:28)
+          at new ObjectId (d:\yj1\node_modules\bson\lib\objectid.js:67:23)
+          at castObjectId (d:\yj1\node_modules\mongoose\lib\cast\objectid.js:25:12)
+          at ObjectId.cast (d:\yj1\node_modules\mongoose\lib\schema\objectid.js:246:12)
+          at ObjectId.SchemaType.applySetters (d:\yj1\node_modules\mongoose\lib\schematype.js:1201:12)
+          at model.$set (d:\yj1\node_modules\mongoose\lib\document.js:1421:22)
+          at model.$set (d:\yj1\node_modules\mongoose\lib\document.js:1146:16)
+          at model.Document (d:\yj1\node_modules\mongoose\lib\document.js:166:12)
+          at model.Model (d:\yj1\node_modules\mongoose\lib\model.js:121:12)
+          at new model (d:\yj1\node_modules\mongoose\lib\model.js:5039:15),
+      valueType: 'number'
+    }
+  },
+  _message: 'products validation failed'
+}
+========
+[20:21:16.777]: $$$$ DTPWEB request: checkPort(15216) $$$$
+
+[20:21:16.778]: $$$$ DTPWEB request: OpenPrinter $$$$
+{
+  action: 'OpenPrinter',
+  ip: '127.0.0.1',
+  port: 15216,
+  deviceType: undefined,
+  timeout: 8000,
+  async: true,
+  callback: [Function: callback]
+}
+{ name: 'P1S', callback: [Function (anonymous)] }
+========
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:363:5)
+    at ServerResponse.setHeader (node:_http_outgoing:574:11)
+    at ServerResponse.header (d:\yj1\node_modules\express\lib\response.js:795:10)
+    at ServerResponse.send (d:\yj1\node_modules\express\lib\response.js:175:12)
+    at ServerResponse.json (d:\yj1\node_modules\express\lib\response.js:279:15)
+    at exports.pAdd (d:\yj1\op.js:60:29)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+========
+[20:21:16.790]: #### onResponse: checkPort(15216) ####
+{
+  statusCode: 0,
+  resultInfo: {
+    version: 'dtpweb/2.3.20230621',
+    httpPort: 15216,
+    udpPort: 15216,
+    supportListDir: false,
+    system: {
+      osName: 'Windows 10',
+      osVersion: '10.00',
+      osServicePack: '00.00',
+      osPlatformId: 2,
+      osProductType: 1
+    },
+    hostname: 'latou',
+    selfIps: [ '192.168.10.148' ],
+    runMode: 1,
+    processId: 5304,
+    now: '2024-07-15 20:21:16.779'
+  }
+}
+★★★ 打印助手运行正常 ★★★
+[20:21:16.790]: #### onResponse: OpenPrinter ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:21:16.790]: $$$$ DTPWEB request: Print $$$$
+{
+  action: 'Print',
+  timeout: 60000,
+  contentType: 2,
+  params: { action: 4096 },
+  data: {
+    jobPages: [ [Array] ],
+    jobInfo: { jobWidth: 25, jobHeight: 15, orientation: undefined },
+    printerInfo: { printerName: 'P1S' },
+    async: undefined,
+    callback: [Function: callback]
+  },
+  async: undefined,
+  callback: [Function: callback]
+}
+[20:21:16.900]: #### onResponse: Print ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:21:16.900]: $$$$ DTPWEB request: ClosePrinter $$$$
+{ action: 'ClosePrinter' }
+[20:21:16.901]: #### onResponse: ClosePrinter ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:26:04.075]: $$$$ DTPWEB request: checkPort(15216) $$$$
+
+[20:26:04.076]: $$$$ DTPWEB request: OpenPrinter $$$$
+{
+  action: 'OpenPrinter',
+  ip: undefined,
+  port: undefined,
+  deviceType: undefined,
+  timeout: 8000,
+  async: true,
+  callback: [Function: callback]
+}
+{ name: 'P1S', callback: [Function (anonymous)] }
+========
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:363:5)
+    at ServerResponse.setHeader (node:_http_outgoing:574:11)
+    at ServerResponse.header (d:\yj1\node_modules\express\lib\response.js:795:10)
+    at ServerResponse.send (d:\yj1\node_modules\express\lib\response.js:175:12)
+    at ServerResponse.json (d:\yj1\node_modules\express\lib\response.js:279:15)
+    at exports.pAdd (d:\yj1\op.js:60:29)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+========
+[20:26:04.090]: #### onResponse: checkPort(15216) ####
+{
+  statusCode: 0,
+  resultInfo: {
+    version: 'dtpweb/2.3.20230621',
+    httpPort: 15216,
+    udpPort: 15216,
+    supportListDir: false,
+    system: {
+      osName: 'Windows 10',
+      osVersion: '10.00',
+      osServicePack: '00.00',
+      osPlatformId: 2,
+      osProductType: 1
+    },
+    hostname: 'latou',
+    selfIps: [ '192.168.10.148' ],
+    runMode: 1,
+    processId: 5304,
+    now: '2024-07-15 20:26:04.082'
+  }
+}
+★★★ 打印助手运行正常 ★★★
+[20:26:04.090]: #### onResponse: OpenPrinter ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:26:04.091]: $$$$ DTPWEB request: Print $$$$
+{
+  action: 'Print',
+  timeout: 60000,
+  contentType: 2,
+  params: { action: 4096 },
+  data: {
+    jobPages: [ [Array] ],
+    jobInfo: { jobWidth: 25, jobHeight: 15, orientation: undefined },
+    printerInfo: { printerName: 'P1S' },
+    async: undefined,
+    callback: [Function: callback]
+  },
+  async: undefined,
+  callback: [Function: callback]
+}
+[20:26:04.213]: #### onResponse: Print ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:26:04.214]: $$$$ DTPWEB request: ClosePrinter $$$$
+{ action: 'ClosePrinter' }
+[20:26:04.215]: #### onResponse: ClosePrinter ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:30:56.835]: $$$$ DTPWEB request: checkPort(15216) $$$$
+
+[20:30:56.838]: $$$$ DTPWEB request: OpenPrinter $$$$
+{
+  action: 'OpenPrinter',
+  ip: undefined,
+  port: undefined,
+  deviceType: undefined,
+  timeout: 8000,
+  async: true,
+  callback: [Function: callback]
+}
+{ name: 'P1S', callback: [Function (anonymous)] }
+========
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:363:5)
+    at ServerResponse.setHeader (node:_http_outgoing:574:11)
+    at ServerResponse.header (d:\yj1\node_modules\express\lib\response.js:795:10)
+    at ServerResponse.send (d:\yj1\node_modules\express\lib\response.js:175:12)
+    at ServerResponse.json (d:\yj1\node_modules\express\lib\response.js:279:15)
+    at exports.pAdd (d:\yj1\op.js:60:29)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+========
+[20:30:56.849]: #### onResponse: checkPort(15216) ####
+{
+  statusCode: 0,
+  resultInfo: {
+    version: 'dtpweb/2.3.20230621',
+    httpPort: 15216,
+    udpPort: 15216,
+    supportListDir: false,
+    system: {
+      osName: 'Windows 10',
+      osVersion: '10.00',
+      osServicePack: '00.00',
+      osPlatformId: 2,
+      osProductType: 1
+    },
+    hostname: 'latou',
+    selfIps: [ '192.168.10.148' ],
+    runMode: 1,
+    processId: 5304,
+    now: '2024-07-15 20:30:56.847'
+  }
+}
+★★★ 打印助手运行正常 ★★★
+[20:30:56.857]: #### onResponse: OpenPrinter ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:30:56.858]: $$$$ DTPWEB request: Print $$$$
+{
+  action: 'Print',
+  timeout: 60000,
+  contentType: 2,
+  params: { action: 4096 },
+  data: {
+    jobPages: [ [Array] ],
+    jobInfo: { jobWidth: 25, jobHeight: 15, orientation: undefined },
+    printerInfo: { printerName: 'P1S' },
+    async: undefined,
+    callback: [Function: callback]
+  },
+  async: undefined,
+  callback: [Function: callback]
+}
+[20:30:56.974]: #### onResponse: Print ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:30:56.974]: $$$$ DTPWEB request: ClosePrinter $$$$
+{ action: 'ClosePrinter' }
+[20:30:56.975]: #### onResponse: ClosePrinter ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:32:34.791]: $$$$ DTPWEB request: checkPort(15216) $$$$
+
+[20:32:34.791]: $$$$ DTPWEB request: OpenPrinter $$$$
+{
+  action: 'OpenPrinter',
+  ip: '127.0.0.1',
+  port: 15216,
+  deviceType: undefined,
+  timeout: 8000,
+  async: true,
+  callback: [Function: callback]
+}
+{ name: 'P1S', callback: [Function (anonymous)] }
+========
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:363:5)
+    at ServerResponse.setHeader (node:_http_outgoing:574:11)
+    at ServerResponse.header (d:\yj1\node_modules\express\lib\response.js:795:10)
+    at ServerResponse.send (d:\yj1\node_modules\express\lib\response.js:175:12)
+    at ServerResponse.json (d:\yj1\node_modules\express\lib\response.js:279:15)
+    at exports.pAdd (d:\yj1\op.js:60:29)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+========
+[20:32:34.802]: #### onResponse: checkPort(15216) ####
+{
+  statusCode: 0,
+  resultInfo: {
+    version: 'dtpweb/2.3.20230621',
+    httpPort: 15216,
+    udpPort: 15216,
+    supportListDir: false,
+    system: {
+      osName: 'Windows 10',
+      osVersion: '10.00',
+      osServicePack: '00.00',
+      osPlatformId: 2,
+      osProductType: 1
+    },
+    hostname: 'latou',
+    selfIps: [ '192.168.10.148' ],
+    runMode: 1,
+    processId: 5304,
+    now: '2024-07-15 20:32:34.794'
+  }
+}
+★★★ 打印助手运行正常 ★★★
+[20:32:34.803]: #### onResponse: OpenPrinter ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:32:34.803]: $$$$ DTPWEB request: Print $$$$
+{
+  action: 'Print',
+  timeout: 60000,
+  contentType: 2,
+  params: { action: 4096 },
+  data: {
+    jobPages: [ [Array] ],
+    jobInfo: { jobWidth: 25, jobHeight: 15, orientation: undefined },
+    printerInfo: { printerName: 'P1S' },
+    async: undefined,
+    callback: [Function: callback]
+  },
+  async: undefined,
+  callback: [Function: callback]
+}
+[20:32:34.917]: #### onResponse: Print ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:32:34.917]: $$$$ DTPWEB request: ClosePrinter $$$$
+{ action: 'ClosePrinter' }
+[20:32:34.919]: #### onResponse: ClosePrinter ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:33:59.138]: $$$$ DTPWEB request: checkPort(15216) $$$$
+
+[20:33:59.138]: $$$$ DTPWEB request: OpenPrinter $$$$
+{
+  action: 'OpenPrinter',
+  ip: '127.0.0.1',
+  port: 15216,
+  deviceType: undefined,
+  timeout: 8000,
+  async: true,
+  callback: [Function: callback]
+}
+{ name: 'P1S', callback: [Function (anonymous)] }
+========
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:363:5)
+    at ServerResponse.setHeader (node:_http_outgoing:574:11)
+    at ServerResponse.header (d:\yj1\node_modules\express\lib\response.js:795:10)
+    at ServerResponse.send (d:\yj1\node_modules\express\lib\response.js:175:12)
+    at ServerResponse.json (d:\yj1\node_modules\express\lib\response.js:279:15)
+    at exports.pAdd (d:\yj1\op.js:60:29)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+========
+[20:33:59.147]: #### onResponse: checkPort(15216) ####
+{
+  statusCode: 0,
+  resultInfo: {
+    version: 'dtpweb/2.3.20230621',
+    httpPort: 15216,
+    udpPort: 15216,
+    supportListDir: false,
+    system: {
+      osName: 'Windows 10',
+      osVersion: '10.00',
+      osServicePack: '00.00',
+      osPlatformId: 2,
+      osProductType: 1
+    },
+    hostname: 'latou',
+    selfIps: [ '192.168.10.148' ],
+    runMode: 1,
+    processId: 5304,
+    now: '2024-07-15 20:33:59.140'
+  }
+}
+★★★ 打印助手运行正常 ★★★
+[20:33:59.147]: #### onResponse: OpenPrinter ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:33:59.148]: $$$$ DTPWEB request: Print $$$$
+{
+  action: 'Print',
+  timeout: 60000,
+  contentType: 2,
+  params: { action: 4096 },
+  data: {
+    jobPages: [ [Array] ],
+    jobInfo: { jobWidth: 25, jobHeight: 15, orientation: undefined },
+    printerInfo: { printerName: 'P1S' },
+    async: undefined,
+    callback: [Function: callback]
+  },
+  async: undefined,
+  callback: [Function: callback]
+}
+[20:33:59.248]: #### onResponse: Print ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:33:59.248]: $$$$ DTPWEB request: ClosePrinter $$$$
+{ action: 'ClosePrinter' }
+[20:33:59.249]: #### onResponse: ClosePrinter ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:35:01.792]: $$$$ DTPWEB request: checkPort(15216) $$$$
+
+[20:35:01.792]: $$$$ DTPWEB request: OpenPrinter $$$$
+{
+  action: 'OpenPrinter',
+  ip: '127.0.0.1',
+  port: 15216,
+  deviceType: undefined,
+  timeout: 8000,
+  async: true,
+  callback: [Function: callback]
+}
+{ name: 'P1S', callback: [Function (anonymous)] }
+========
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:363:5)
+    at ServerResponse.setHeader (node:_http_outgoing:574:11)
+    at ServerResponse.header (d:\yj1\node_modules\express\lib\response.js:795:10)
+    at ServerResponse.send (d:\yj1\node_modules\express\lib\response.js:175:12)
+    at ServerResponse.json (d:\yj1\node_modules\express\lib\response.js:279:15)
+    at exports.pAdd (d:\yj1\op.js:60:29)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+========
+[20:35:01.802]: #### onResponse: checkPort(15216) ####
+{
+  statusCode: 0,
+  resultInfo: {
+    version: 'dtpweb/2.3.20230621',
+    httpPort: 15216,
+    udpPort: 15216,
+    supportListDir: false,
+    system: {
+      osName: 'Windows 10',
+      osVersion: '10.00',
+      osServicePack: '00.00',
+      osPlatformId: 2,
+      osProductType: 1
+    },
+    hostname: 'latou',
+    selfIps: [ '192.168.10.148' ],
+    runMode: 1,
+    processId: 5304,
+    now: '2024-07-15 20:35:01.794'
+  }
+}
+★★★ 打印助手运行正常 ★★★
+[20:35:01.802]: #### onResponse: OpenPrinter ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:35:01.802]: $$$$ DTPWEB request: Print $$$$
+{
+  action: 'Print',
+  timeout: 60000,
+  contentType: 2,
+  params: { action: 4096 },
+  data: {
+    jobPages: [ [Array] ],
+    jobInfo: { jobWidth: 25, jobHeight: 15, orientation: undefined },
+    printerInfo: { printerName: 'P1S' },
+    async: undefined,
+    callback: [Function: callback]
+  },
+  async: undefined,
+  callback: [Function: callback]
+}
+[20:35:01.939]: #### onResponse: Print ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:35:01.939]: $$$$ DTPWEB request: ClosePrinter $$$$
+{ action: 'ClosePrinter' }
+[20:35:01.940]: #### onResponse: ClosePrinter ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:35:40.249]: $$$$ DTPWEB request: checkPort(15216) $$$$
+
+[20:35:40.249]: $$$$ DTPWEB request: OpenPrinter $$$$
+{
+  action: 'OpenPrinter',
+  ip: '127.0.0.1',
+  port: 15216,
+  deviceType: undefined,
+  timeout: 8000,
+  async: true,
+  callback: [Function: callback]
+}
+{ name: 'P1S', callback: [Function (anonymous)] }
+========
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:363:5)
+    at ServerResponse.setHeader (node:_http_outgoing:574:11)
+    at ServerResponse.header (d:\yj1\node_modules\express\lib\response.js:795:10)
+    at ServerResponse.send (d:\yj1\node_modules\express\lib\response.js:175:12)
+    at ServerResponse.json (d:\yj1\node_modules\express\lib\response.js:279:15)
+    at exports.pAdd (d:\yj1\op.js:60:29)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+========
+[20:35:40.261]: #### onResponse: checkPort(15216) ####
+{
+  statusCode: 0,
+  resultInfo: {
+    version: 'dtpweb/2.3.20230621',
+    httpPort: 15216,
+    udpPort: 15216,
+    supportListDir: false,
+    system: {
+      osName: 'Windows 10',
+      osVersion: '10.00',
+      osServicePack: '00.00',
+      osPlatformId: 2,
+      osProductType: 1
+    },
+    hostname: 'latou',
+    selfIps: [ '192.168.10.148' ],
+    runMode: 1,
+    processId: 5304,
+    now: '2024-07-15 20:35:40.250'
+  }
+}
+★★★ 打印助手运行正常 ★★★
+[20:35:40.261]: #### onResponse: OpenPrinter ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:35:40.261]: $$$$ DTPWEB request: Print $$$$
+{
+  action: 'Print',
+  timeout: 60000,
+  contentType: 2,
+  params: { action: 4096 },
+  data: {
+    jobPages: [ [Array] ],
+    jobInfo: { jobWidth: 25, jobHeight: 15, orientation: undefined },
+    printerInfo: { printerName: 'P1S' },
+    async: undefined,
+    callback: [Function: callback]
+  },
+  async: undefined,
+  callback: [Function: callback]
+}
+[20:35:40.367]: #### onResponse: Print ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:35:40.368]: $$$$ DTPWEB request: ClosePrinter $$$$
+{ action: 'ClosePrinter' }
+[20:35:40.369]: #### onResponse: ClosePrinter ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:37:25.170]: $$$$ DTPWEB request: checkPort(15216) $$$$
+
+[20:37:25.170]: $$$$ DTPWEB request: OpenPrinter $$$$
+{
+  action: 'OpenPrinter',
+  ip: '127.0.0.1',
+  port: 15216,
+  deviceType: undefined,
+  timeout: 8000,
+  async: true,
+  callback: [Function: callback]
+}
+{ name: 'P1S', callback: [Function (anonymous)] }
+========
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:363:5)
+    at ServerResponse.setHeader (node:_http_outgoing:574:11)
+    at ServerResponse.header (d:\yj1\node_modules\express\lib\response.js:795:10)
+    at ServerResponse.send (d:\yj1\node_modules\express\lib\response.js:175:12)
+    at ServerResponse.json (d:\yj1\node_modules\express\lib\response.js:279:15)
+    at exports.pAdd (d:\yj1\op.js:60:29)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+========
+[20:37:25.181]: #### onResponse: checkPort(15216) ####
+{
+  statusCode: 0,
+  resultInfo: {
+    version: 'dtpweb/2.3.20230621',
+    httpPort: 15216,
+    udpPort: 15216,
+    supportListDir: false,
+    system: {
+      osName: 'Windows 10',
+      osVersion: '10.00',
+      osServicePack: '00.00',
+      osPlatformId: 2,
+      osProductType: 1
+    },
+    hostname: 'latou',
+    selfIps: [ '192.168.10.148' ],
+    runMode: 1,
+    processId: 5304,
+    now: '2024-07-15 20:37:25.172'
+  }
+}
+★★★ 打印助手运行正常 ★★★
+[20:37:25.181]: #### onResponse: OpenPrinter ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:37:25.181]: $$$$ DTPWEB request: Print $$$$
+{
+  action: 'Print',
+  timeout: 60000,
+  contentType: 2,
+  params: { action: 4096 },
+  data: {
+    jobPages: [ [Array] ],
+    jobInfo: { jobWidth: 25, jobHeight: 15, orientation: undefined },
+    printerInfo: { printerName: 'P1S' },
+    async: undefined,
+    callback: [Function: callback]
+  },
+  async: undefined,
+  callback: [Function: callback]
+}
+[20:37:25.276]: #### onResponse: Print ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:37:25.276]: $$$$ DTPWEB request: ClosePrinter $$$$
+{ action: 'ClosePrinter' }
+[20:37:25.277]: #### onResponse: ClosePrinter ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:39:50.228]: $$$$ DTPWEB request: checkPort(15216) $$$$
+
+[20:39:50.228]: $$$$ DTPWEB request: OpenPrinter $$$$
+{
+  action: 'OpenPrinter',
+  ip: '127.0.0.1',
+  port: 15216,
+  deviceType: undefined,
+  timeout: 8000,
+  async: true,
+  callback: [Function: callback]
+}
+{ name: 'P1S', callback: [Function (anonymous)] }
+========
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:363:5)
+    at ServerResponse.setHeader (node:_http_outgoing:574:11)
+    at ServerResponse.header (d:\yj1\node_modules\express\lib\response.js:795:10)
+    at ServerResponse.send (d:\yj1\node_modules\express\lib\response.js:175:12)
+    at ServerResponse.json (d:\yj1\node_modules\express\lib\response.js:279:15)
+    at exports.pAdd (d:\yj1\op.js:60:29)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+========
+[20:39:50.237]: #### onResponse: checkPort(15216) ####
+{
+  statusCode: 0,
+  resultInfo: {
+    version: 'dtpweb/2.3.20230621',
+    httpPort: 15216,
+    udpPort: 15216,
+    supportListDir: false,
+    system: {
+      osName: 'Windows 10',
+      osVersion: '10.00',
+      osServicePack: '00.00',
+      osPlatformId: 2,
+      osProductType: 1
+    },
+    hostname: 'latou',
+    selfIps: [ '192.168.10.148' ],
+    runMode: 1,
+    processId: 5304,
+    now: '2024-07-15 20:39:50.230'
+  }
+}
+★★★ 打印助手运行正常 ★★★
+[20:39:50.238]: #### onResponse: OpenPrinter ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:39:50.238]: $$$$ DTPWEB request: Print $$$$
+{
+  action: 'Print',
+  timeout: 60000,
+  contentType: 2,
+  params: { action: 4096 },
+  data: {
+    jobPages: [ [Array] ],
+    jobInfo: { jobWidth: 25, jobHeight: 15, orientation: undefined },
+    printerInfo: { printerName: 'P1S' },
+    async: undefined,
+    callback: [Function: callback]
+  },
+  async: undefined,
+  callback: [Function: callback]
+}
+[20:39:50.341]: #### onResponse: Print ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:39:50.341]: $$$$ DTPWEB request: ClosePrinter $$$$
+{ action: 'ClosePrinter' }
+[20:39:50.342]: #### onResponse: ClosePrinter ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:40:49.230]: $$$$ DTPWEB request: checkPort(15216) $$$$
+
+[20:40:49.230]: $$$$ DTPWEB request: OpenPrinter $$$$
+{
+  action: 'OpenPrinter',
+  ip: '127.0.0.1',
+  port: 15216,
+  deviceType: undefined,
+  timeout: 8000,
+  async: true,
+  callback: [Function: callback]
+}
+{ name: 'P1S', callback: [Function (anonymous)] }
+========
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:363:5)
+    at ServerResponse.setHeader (node:_http_outgoing:574:11)
+    at ServerResponse.header (d:\yj1\node_modules\express\lib\response.js:795:10)
+    at ServerResponse.send (d:\yj1\node_modules\express\lib\response.js:175:12)
+    at ServerResponse.json (d:\yj1\node_modules\express\lib\response.js:279:15)
+    at exports.pAdd (d:\yj1\op.js:60:29)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+========
+[20:40:49.241]: #### onResponse: checkPort(15216) ####
+{
+  statusCode: 0,
+  resultInfo: {
+    version: 'dtpweb/2.3.20230621',
+    httpPort: 15216,
+    udpPort: 15216,
+    supportListDir: false,
+    system: {
+      osName: 'Windows 10',
+      osVersion: '10.00',
+      osServicePack: '00.00',
+      osPlatformId: 2,
+      osProductType: 1
+    },
+    hostname: 'latou',
+    selfIps: [ '192.168.10.148' ],
+    runMode: 1,
+    processId: 5304,
+    now: '2024-07-15 20:40:49.232'
+  }
+}
+★★★ 打印助手运行正常 ★★★
+[20:40:49.241]: #### onResponse: OpenPrinter ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:40:49.241]: $$$$ DTPWEB request: Print $$$$
+{
+  action: 'Print',
+  timeout: 60000,
+  contentType: 2,
+  params: { action: 4096 },
+  data: {
+    jobPages: [ [Array] ],
+    jobInfo: { jobWidth: 25, jobHeight: 15, orientation: undefined },
+    printerInfo: { printerName: 'P1S' },
+    async: undefined,
+    callback: [Function: callback]
+  },
+  async: undefined,
+  callback: [Function: callback]
+}
+[20:40:49.337]: #### onResponse: Print ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:40:49.337]: $$$$ DTPWEB request: ClosePrinter $$$$
+{ action: 'ClosePrinter' }
+[20:40:49.338]: #### onResponse: ClosePrinter ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:41:43.876]: $$$$ DTPWEB request: checkPort(15216) $$$$
+
+[20:41:43.877]: $$$$ DTPWEB request: OpenPrinter $$$$
+{
+  action: 'OpenPrinter',
+  ip: '127.0.0.1',
+  port: 15216,
+  deviceType: undefined,
+  timeout: 8000,
+  async: true,
+  callback: [Function: callback]
+}
+{ name: 'P1S', callback: [Function (anonymous)] }
+========
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:363:5)
+    at ServerResponse.setHeader (node:_http_outgoing:574:11)
+    at ServerResponse.header (d:\yj1\node_modules\express\lib\response.js:795:10)
+    at ServerResponse.send (d:\yj1\node_modules\express\lib\response.js:175:12)
+    at ServerResponse.json (d:\yj1\node_modules\express\lib\response.js:279:15)
+    at exports.pAdd (d:\yj1\op.js:60:29)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+========
+[20:41:43.888]: #### onResponse: checkPort(15216) ####
+{
+  statusCode: 0,
+  resultInfo: {
+    version: 'dtpweb/2.3.20230621',
+    httpPort: 15216,
+    udpPort: 15216,
+    supportListDir: false,
+    system: {
+      osName: 'Windows 10',
+      osVersion: '10.00',
+      osServicePack: '00.00',
+      osPlatformId: 2,
+      osProductType: 1
+    },
+    hostname: 'latou',
+    selfIps: [ '192.168.10.148' ],
+    runMode: 1,
+    processId: 5304,
+    now: '2024-07-15 20:41:43.878'
+  }
+}
+★★★ 打印助手运行正常 ★★★
+[20:41:43.889]: #### onResponse: OpenPrinter ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:41:43.889]: $$$$ DTPWEB request: Print $$$$
+{
+  action: 'Print',
+  timeout: 60000,
+  contentType: 2,
+  params: { action: 4096 },
+  data: {
+    jobPages: [ [Array] ],
+    jobInfo: { jobWidth: 25, jobHeight: 15, orientation: undefined },
+    printerInfo: { printerName: 'P1S' },
+    async: undefined,
+    callback: [Function: callback]
+  },
+  async: undefined,
+  callback: [Function: callback]
+}
+[20:41:44.002]: #### onResponse: Print ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[20:41:44.002]: $$$$ DTPWEB request: ClosePrinter $$$$
+{ action: 'ClosePrinter' }
+[20:41:44.003]: #### onResponse: ClosePrinter ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+========
+Error: listen EADDRINUSE: address already in use :::80
+    at Server.setupListenHandle [as _listen2] (node:net:1306:16)
+    at listenInCluster (node:net:1354:12)
+    at Server.listen (node:net:1441:7)
+    at Function.listen (d:\yj1\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (d:\yj1\app.js:26:5)
+    at Module._compile (node:internal/modules/cjs/loader:1108:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1137:10)
+    at Module.load (node:internal/modules/cjs/loader:988:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:828:14)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 80
+}
+========
+========
+Error: listen EADDRINUSE: address already in use :::80
+    at Server.setupListenHandle [as _listen2] (node:net:1306:16)
+    at listenInCluster (node:net:1354:12)
+    at Server.listen (node:net:1441:7)
+    at Function.listen (d:\yj1\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (d:\yj1\app.js:26:5)
+    at Module._compile (node:internal/modules/cjs/loader:1108:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1137:10)
+    at Module.load (node:internal/modules/cjs/loader:988:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:828:14)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 80
+}
+========
+========
+Error: listen EADDRINUSE: address already in use :::80
+    at Server.setupListenHandle [as _listen2] (node:net:1306:16)
+    at listenInCluster (node:net:1354:12)
+    at Server.listen (node:net:1441:7)
+    at Function.listen (d:\yj1\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (d:\yj1\app.js:26:5)
+    at Module._compile (node:internal/modules/cjs/loader:1108:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1137:10)
+    at Module.load (node:internal/modules/cjs/loader:988:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:828:14)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 80
+}
+========
+[21:28:00.355]: $$$$ DTPWEB request: checkPort(15216) $$$$
+
+[21:28:00.357]: $$$$ DTPWEB request: OpenPrinter $$$$
+{
+  action: 'OpenPrinter',
+  ip: undefined,
+  port: undefined,
+  deviceType: undefined,
+  timeout: 8000,
+  async: true,
+  callback: [Function: callback]
+}
+{ name: 'P1S', callback: [Function (anonymous)] }
+========
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:363:5)
+    at ServerResponse.setHeader (node:_http_outgoing:574:11)
+    at ServerResponse.header (d:\yj1\node_modules\express\lib\response.js:795:10)
+    at ServerResponse.send (d:\yj1\node_modules\express\lib\response.js:175:12)
+    at ServerResponse.json (d:\yj1\node_modules\express\lib\response.js:279:15)
+    at exports.pAdd (d:\yj1\op.js:60:29)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+========
+[21:28:00.498]: #### onResponse: checkPort(15216) ####
+{
+  statusCode: 0,
+  resultInfo: {
+    version: 'dtpweb/2.3.20230621',
+    httpPort: 15216,
+    udpPort: 15216,
+    supportListDir: false,
+    system: {
+      osName: 'Windows 10',
+      osVersion: '10.00',
+      osServicePack: '00.00',
+      osPlatformId: 2,
+      osProductType: 1
+    },
+    hostname: 'latou',
+    selfIps: [ '192.168.10.148' ],
+    runMode: 1,
+    processId: 4744,
+    now: '2024-07-18 21:28:00.368'
+  }
+}
+★★★ 打印助手运行正常 ★★★
+[21:28:00.500]: #### onResponse: OpenPrinter ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[21:28:00.502]: $$$$ DTPWEB request: Print $$$$
+{
+  action: 'Print',
+  timeout: 60000,
+  contentType: 2,
+  params: { action: 4096 },
+  data: {
+    jobPages: [ [Array] ],
+    jobInfo: { jobWidth: 25, jobHeight: 15, orientation: undefined },
+    printerInfo: { printerName: 'P1S' },
+    async: undefined,
+    callback: [Function: callback]
+  },
+  async: undefined,
+  callback: [Function: callback]
+}
+[21:28:02.395]: #### onResponse: Print ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }
+[21:28:02.395]: $$$$ DTPWEB request: ClosePrinter $$$$
+{ action: 'ClosePrinter' }
+[21:28:02.396]: #### onResponse: ClosePrinter ####
+{ statusCode: 0, resultInfo: 'LPA_OK' }

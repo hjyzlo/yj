@@ -42,7 +42,7 @@ pLabel = async (_id,price)=>{
             // 2. 创建一个指定大小的标签任务
             api.startJob({width: Pinfo['labelWidth'], height: Pinfo['labelHeight']});
             // 3. 在标签纸上打印目标字符串
-            api.drawText({text:'￥' + price, x:Pinfo['textX'],y:Pinfo['textY'],fontHeight:Pinfo['fontHeight'],orientation:Pinfo['orientation']});
+            api.drawText({text: price + '元', x:Pinfo['textX'],y:Pinfo['textY'],fontHeight:Pinfo['fontHeight'],orientation:Pinfo['orientation']});
             api.draw2DQRCode({text:_id,x:Pinfo['qrcodeX'],y:Pinfo['qrcodeY'],width:Pinfo['qrcodeWidth'],orientation:Pinfo['orientation']})
             // 4. 结束绘制操作，开始打印
             api.commitJob(() => {

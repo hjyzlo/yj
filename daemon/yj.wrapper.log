@@ -1,2 +1,200 @@
 2024-07-15 13:08:49 - Starting d:\nodejs\node.exe  --harmony d:\yj1\node_modules\node-windows\lib\wrapper.js --file d:\yj1\app.js --scriptoptions= --log "YJ wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
 2024-07-15 13:08:49 - Started 9244
+2024-07-15 20:22:24 - Stopping yj.exe
+2024-07-15 20:22:24 - ProcessKill 9244
+2024-07-15 20:22:24 - Found child process: 7148 Name: conhost.exe
+2024-07-15 20:22:24 - Found child process: 15440 Name: node.exe
+2024-07-15 20:22:24 - Stopping process 7148
+2024-07-15 20:22:24 - Send SIGINT 7148
+2024-07-15 20:22:24 - SIGINT to 7148 failed - Killing as fallback
+2024-07-15 20:22:24 - Stopping process 15440
+2024-07-15 20:22:24 - Send SIGINT 15440
+2024-07-15 20:22:24 - SIGINT to 15440 failed - Killing as fallback
+2024-07-15 20:22:24 - Stopping process 9244
+2024-07-15 20:22:24 - Send SIGINT 9244
+2024-07-15 20:22:24 - SIGINT to 9244 failed - Killing as fallback
+2024-07-15 20:22:24 - Finished yj.exe
+2024-07-15 20:22:25 - Starting d:\nodejs\node.exe  --harmony d:\yj1\node_modules\node-windows\lib\wrapper.js --file d:\yj1\app.js --scriptoptions= --log "YJ wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-07-15 20:22:25 - Started 11456
+2024-07-15 20:29:48 - Stopping yj.exe
+2024-07-15 20:29:48 - ProcessKill 11456
+2024-07-15 20:29:48 - Found child process: 5500 Name: conhost.exe
+2024-07-15 20:29:48 - Found child process: 20656 Name: node.exe
+2024-07-15 20:29:48 - Stopping process 5500
+2024-07-15 20:29:48 - Send SIGINT 5500
+2024-07-15 20:29:48 - SIGINT to 5500 failed - Killing as fallback
+2024-07-15 20:29:48 - Stopping process 20656
+2024-07-15 20:29:48 - Send SIGINT 20656
+2024-07-15 20:29:48 - SIGINT to 20656 failed - Killing as fallback
+2024-07-15 20:29:48 - Stopping process 11456
+2024-07-15 20:29:48 - Send SIGINT 11456
+2024-07-15 20:29:48 - SIGINT to 11456 failed - Killing as fallback
+2024-07-15 20:29:48 - Finished yj.exe
+2024-07-15 20:29:50 - Starting d:\nodejs\node.exe  --harmony d:\yj1\node_modules\node-windows\lib\wrapper.js --file d:\yj1\app.js --scriptoptions= --log "YJ wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-07-15 20:29:50 - Started 660
+2024-07-16 12:47:42 - Starting d:\nodejs\node.exe  --harmony d:\yj1\node_modules\node-windows\lib\wrapper.js --file d:\yj1\app.js --scriptoptions= --log "YJ wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-07-16 12:47:43 - Started 23568
+2024-07-16 12:51:43 - Stopping yj.exe
+2024-07-16 12:51:43 - ProcessKill 23568
+2024-07-16 12:51:43 - Found child process: 10260 Name: conhost.exe
+2024-07-16 12:51:43 - Found child process: 20472 Name: node.exe
+2024-07-16 12:51:43 - Stopping process 10260
+2024-07-16 12:51:43 - Send SIGINT 10260
+2024-07-16 12:51:43 - SIGINT to 10260 failed - Killing as fallback
+2024-07-16 12:51:43 - Stopping process 20472
+2024-07-16 12:51:43 - Send SIGINT 20472
+2024-07-16 12:51:43 - SIGINT to 20472 failed - Killing as fallback
+2024-07-16 12:51:43 - Stopping process 23568
+2024-07-16 12:51:43 - Send SIGINT 23568
+2024-07-16 12:51:43 - SIGINT to 23568 failed - Killing as fallback
+2024-07-16 12:51:43 - Finished yj.exe
+2024-07-16 12:51:44 - Starting d:\nodejs\node.exe  --harmony d:\yj1\node_modules\node-windows\lib\wrapper.js --file d:\yj1\app.js --scriptoptions= --log "YJ wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-07-16 12:51:44 - Started 11968
+2024-07-16 12:53:05 - Stopping yj.exe
+2024-07-16 12:53:05 - ProcessKill 11968
+2024-07-16 12:53:05 - Found child process: 10420 Name: conhost.exe
+2024-07-16 12:53:05 - Found child process: 20664 Name: node.exe
+2024-07-16 12:53:05 - Stopping process 10420
+2024-07-16 12:53:05 - Send SIGINT 10420
+2024-07-16 12:53:05 - SIGINT to 10420 failed - Killing as fallback
+2024-07-16 12:53:05 - Stopping process 20664
+2024-07-16 12:53:05 - Send SIGINT 20664
+2024-07-16 12:53:05 - SIGINT to 20664 failed - Killing as fallback
+2024-07-16 12:53:05 - Stopping process 11968
+2024-07-16 12:53:05 - Send SIGINT 11968
+2024-07-16 12:53:05 - SIGINT to 11968 failed - Killing as fallback
+2024-07-16 12:53:05 - Finished yj.exe
+2024-07-16 12:53:06 - Starting d:\nodejs\node.exe  --harmony d:\yj1\node_modules\node-windows\lib\wrapper.js --file d:\yj1\app.js --scriptoptions= --log "YJ wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-07-16 12:53:06 - Started 17516
+2024-07-16 12:53:09 - Stopping yj.exe
+2024-07-16 12:53:09 - ProcessKill 17516
+2024-07-16 12:53:09 - Found child process: 20152 Name: conhost.exe
+2024-07-16 12:53:09 - Found child process: 18812 Name: node.exe
+2024-07-16 12:53:09 - Stopping process 20152
+2024-07-16 12:53:09 - Send SIGINT 20152
+2024-07-16 12:53:09 - SIGINT to 20152 failed - Killing as fallback
+2024-07-16 12:53:09 - Stopping process 18812
+2024-07-16 12:53:09 - Send SIGINT 18812
+2024-07-16 12:53:09 - SIGINT to 18812 failed - Killing as fallback
+2024-07-16 12:53:09 - Stopping process 17516
+2024-07-16 12:53:09 - Send SIGINT 17516
+2024-07-16 12:53:09 - SIGINT to 17516 failed - Killing as fallback
+2024-07-16 12:53:09 - Finished yj.exe
+2024-07-16 12:56:14 - Starting d:\nodejs\node.exe  --harmony d:\yj1\node_modules\node-windows\lib\wrapper.js --file d:\yj1\app.js --scriptoptions= --log "YJ wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-07-16 12:56:15 - Started 5984
+2024-07-16 12:59:17 - Stopping yj.exe
+2024-07-16 12:59:17 - ProcessKill 5984
+2024-07-16 12:59:17 - Found child process: 6076 Name: conhost.exe
+2024-07-16 12:59:17 - Found child process: 8060 Name: node.exe
+2024-07-16 12:59:17 - Stopping process 6076
+2024-07-16 12:59:17 - Send SIGINT 6076
+2024-07-16 12:59:17 - SIGINT to 6076 failed - Killing as fallback
+2024-07-16 12:59:17 - Stopping process 8060
+2024-07-16 12:59:17 - Send SIGINT 8060
+2024-07-16 12:59:17 - SIGINT to 8060 failed - Killing as fallback
+2024-07-16 12:59:17 - Stopping process 5984
+2024-07-16 12:59:17 - Send SIGINT 5984
+2024-07-16 12:59:17 - SIGINT to 5984 failed - Killing as fallback
+2024-07-16 12:59:17 - Finished yj.exe
+2024-07-16 12:59:49 - Starting d:\nodejs\node.exe  --harmony d:\yj1\node_modules\node-windows\lib\wrapper.js --file d:\yj1\app.js --scriptoptions= --log "YJ wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-07-16 12:59:49 - Started 15704
+2024-07-16 13:00:05 - Stopping yj.exe
+2024-07-16 13:00:05 - ProcessKill 15704
+2024-07-16 13:00:05 - Shutdown exception
+Message:系统正在关机。
+
+Stacktrace:   在 System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   在 System.Management.ManagementScope.InitializeGuts(Object o)
+   在 System.Management.ManagementScope.Initialize()
+   在 System.Management.ManagementObjectSearcher.Initialize()
+   在 System.Management.ManagementObjectSearcher.Get()
+   在 winsw.WrapperService.GetChildPids(Int32 pid)
+   在 winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   在 winsw.WrapperService.StopIt()
+   在 winsw.WrapperService.OnShutdown()
+2024-07-16 13:00:24 - Starting d:\nodejs\node.exe  --harmony d:\yj1\node_modules\node-windows\lib\wrapper.js --file d:\yj1\app.js --scriptoptions= --log "YJ wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-07-16 13:00:24 - Started 7200
+2024-07-17 12:41:58 - Starting d:\nodejs\node.exe  --harmony d:\yj1\node_modules\node-windows\lib\wrapper.js --file d:\yj1\app.js --scriptoptions= --log "YJ wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-07-17 12:41:58 - Started 7584
+2024-07-17 12:42:29 - Stopping yj.exe
+2024-07-17 12:42:29 - ProcessKill 7584
+2024-07-17 12:42:29 - Shutdown exception
+Message:系统正在关机。
+
+Stacktrace:   在 System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   在 System.Management.ManagementScope.InitializeGuts(Object o)
+   在 System.Management.ManagementScope.Initialize()
+   在 System.Management.ManagementObjectSearcher.Initialize()
+   在 System.Management.ManagementObjectSearcher.Get()
+   在 winsw.WrapperService.GetChildPids(Int32 pid)
+   在 winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   在 winsw.WrapperService.StopIt()
+   在 winsw.WrapperService.OnShutdown()
+2024-07-17 12:42:54 - Starting d:\nodejs\node.exe  --harmony d:\yj1\node_modules\node-windows\lib\wrapper.js --file d:\yj1\app.js --scriptoptions= --log "YJ wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-07-17 12:42:54 - Started 7392
+2024-07-18 12:19:26 - Starting d:\nodejs\node.exe  --harmony d:\yj1\node_modules\node-windows\lib\wrapper.js --file d:\yj1\app.js --scriptoptions= --log "YJ wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-07-18 12:19:27 - Started 16584
+2024-07-18 12:20:59 - Stopping yj.exe
+2024-07-18 12:20:59 - ProcessKill 16584
+2024-07-18 12:20:59 - Found child process: 20472 Name: conhost.exe
+2024-07-18 12:20:59 - Found child process: 7808 Name: node.exe
+2024-07-18 12:20:59 - Stopping process 20472
+2024-07-18 12:20:59 - Send SIGINT 20472
+2024-07-18 12:20:59 - SIGINT to 20472 failed - Killing as fallback
+2024-07-18 12:20:59 - Stopping process 7808
+2024-07-18 12:20:59 - Send SIGINT 7808
+2024-07-18 12:20:59 - SIGINT to 7808 failed - Killing as fallback
+2024-07-18 12:20:59 - Stopping process 16584
+2024-07-18 12:20:59 - Send SIGINT 16584
+2024-07-18 12:20:59 - SIGINT to 16584 failed - Killing as fallback
+2024-07-18 12:20:59 - Finished yj.exe
+2024-07-18 12:21:00 - Starting d:\nodejs\node.exe  --harmony d:\yj1\node_modules\node-windows\lib\wrapper.js --file d:\yj1\app.js --scriptoptions= --log "YJ wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-07-18 12:21:00 - Started 11272
+2024-07-18 12:21:20 - Stopping yj.exe
+2024-07-18 12:21:20 - ProcessKill 11272
+2024-07-18 12:21:20 - Found child process: 16672 Name: conhost.exe
+2024-07-18 12:21:20 - Found child process: 20168 Name: node.exe
+2024-07-18 12:21:20 - Stopping process 16672
+2024-07-18 12:21:20 - Send SIGINT 16672
+2024-07-18 12:21:20 - SIGINT to 16672 failed - Killing as fallback
+2024-07-18 12:21:20 - Stopping process 20168
+2024-07-18 12:21:20 - Send SIGINT 20168
+2024-07-18 12:21:20 - SIGINT to 20168 failed - Killing as fallback
+2024-07-18 12:21:20 - Stopping process 11272
+2024-07-18 12:21:20 - Send SIGINT 11272
+2024-07-18 12:21:20 - SIGINT to 11272 failed - Killing as fallback
+2024-07-18 12:21:20 - Finished yj.exe
+2024-07-18 12:21:51 - Starting d:\nodejs\node.exe  --harmony d:\yj1\node_modules\node-windows\lib\wrapper.js --file d:\yj1\app.js --scriptoptions= --log "YJ wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-07-18 12:21:51 - Started 5940
+2024-07-18 12:23:42 - Stopping yj.exe
+2024-07-18 12:23:42 - ProcessKill 5940
+2024-07-18 12:23:42 - Found child process: 4892 Name: conhost.exe
+2024-07-18 12:23:42 - Found child process: 20460 Name: node.exe
+2024-07-18 12:23:42 - Stopping process 4892
+2024-07-18 12:23:42 - Send SIGINT 4892
+2024-07-18 12:23:42 - SIGINT to 4892 failed - Killing as fallback
+2024-07-18 12:23:42 - Stopping process 20460
+2024-07-18 12:23:42 - Send SIGINT 20460
+2024-07-18 12:23:42 - SIGINT to 20460 failed - Killing as fallback
+2024-07-18 12:23:42 - Stopping process 5940
+2024-07-18 12:23:42 - Send SIGINT 5940
+2024-07-18 12:23:42 - SIGINT to 5940 failed - Killing as fallback
+2024-07-18 12:23:42 - Finished yj.exe
+2024-07-18 20:39:26 - Starting d:\nodejs\node.exe  --harmony d:\yj1\node_modules\node-windows\lib\wrapper.js --file d:\yj1\app.js --scriptoptions= --log "YJ wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-07-18 20:39:26 - Started 1232
+2024-07-18 20:41:46 - Stopping yj.exe
+2024-07-18 20:41:46 - ProcessKill 1232
+2024-07-18 20:41:46 - Found child process: 1456 Name: conhost.exe
+2024-07-18 20:41:46 - Found child process: 2060 Name: node.exe
+2024-07-18 20:41:46 - Stopping process 1456
+2024-07-18 20:41:46 - Send SIGINT 1456
+2024-07-18 20:41:46 - SIGINT to 1456 failed - Killing as fallback
+2024-07-18 20:41:46 - Stopping process 2060
+2024-07-18 20:41:46 - Send SIGINT 2060
+2024-07-18 20:41:46 - SIGINT to 2060 failed - Killing as fallback
+2024-07-18 20:41:46 - Stopping process 1232
+2024-07-18 20:41:46 - Send SIGINT 1232
+2024-07-18 20:41:46 - SIGINT to 1232 failed - Killing as fallback
+2024-07-18 20:41:46 - Finished yj.exe
+2024-07-18 20:41:49 - Starting d:\nodejs\node.exe  --harmony d:\yj1\node_modules\node-windows\lib\wrapper.js --file d:\yj1\app.js --scriptoptions= --log "YJ wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-07-18 20:41:50 - Started 12376
