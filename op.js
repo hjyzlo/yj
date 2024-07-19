@@ -61,7 +61,6 @@ exports.pAdd = async (req,res)=>{
 }
 exports.oAdd = async (req,res)=>{
     //const order = await orders.create(req.body.data)
-    console.log(req.body)
     await orders.create(req.body).then(()=>res.sendStatus(200))
 }
 exports.pQuery= async (req,res)=>{

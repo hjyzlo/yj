@@ -228,3 +228,5 @@ Stacktrace:   在 System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInte
 2024-07-18 21:43:26 - Send SIGINT 4012
 2024-07-18 21:43:26 - SIGINT to 4012 failed - Killing as fallback
 2024-07-18 21:43:26 - Finished yj.exe
+2024-07-19 13:23:08 - Starting d:\nodejs\node.exe  --harmony d:\yj1\node_modules\node-windows\lib\wrapper.js --file d:\yj1\app.js --scriptoptions= --log "YJ wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-07-19 13:23:08 - Started 1692
