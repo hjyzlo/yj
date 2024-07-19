@@ -57,7 +57,12 @@ exports.pAdd = async (req,res)=>{
         const newProducts = await products.create({...JSON.parse(req.body.data),'imgUrl':req.imgUrl})
         const _id = newProducts.get("_id").toString()
         await pLabel(_id,newProducts.get("price").toString())  
-        res.sendStatus(200).json(newProducts)
+        res.sendStatus(200)
+}
+exports.oAdd = async (req,res)=>{
+    //const order = await orders.create(req.body.data)
+    console.log(req.body)
+    await orders.create(req.body).then(()=>res.sendStatus(200))
 }
 exports.pQuery= async (req,res)=>{
     try{

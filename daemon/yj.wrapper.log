@@ -198,3 +198,33 @@ Stacktrace:   在 System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInte
 2024-07-18 20:41:46 - Finished yj.exe
 2024-07-18 20:41:49 - Starting d:\nodejs\node.exe  --harmony d:\yj1\node_modules\node-windows\lib\wrapper.js --file d:\yj1\app.js --scriptoptions= --log "YJ wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
 2024-07-18 20:41:50 - Started 12376
+2024-07-18 21:41:06 - Stopping yj.exe
+2024-07-18 21:41:06 - ProcessKill 12376
+2024-07-18 21:41:07 - Found child process: 10908 Name: conhost.exe
+2024-07-18 21:41:07 - Found child process: 1936 Name: node.exe
+2024-07-18 21:41:07 - Stopping process 10908
+2024-07-18 21:41:07 - Send SIGINT 10908
+2024-07-18 21:41:07 - SIGINT to 10908 failed - Killing as fallback
+2024-07-18 21:41:07 - Stopping process 1936
+2024-07-18 21:41:07 - Send SIGINT 1936
+2024-07-18 21:41:07 - SIGINT to 1936 failed - Killing as fallback
+2024-07-18 21:41:07 - Stopping process 12376
+2024-07-18 21:41:07 - Send SIGINT 12376
+2024-07-18 21:41:07 - SIGINT to 12376 failed - Killing as fallback
+2024-07-18 21:41:07 - Finished yj.exe
+2024-07-18 21:41:09 - Starting d:\nodejs\node.exe  --harmony d:\yj1\node_modules\node-windows\lib\wrapper.js --file d:\yj1\app.js --scriptoptions= --log "YJ wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-07-18 21:41:09 - Started 4012
+2024-07-18 21:43:25 - Stopping yj.exe
+2024-07-18 21:43:25 - ProcessKill 4012
+2024-07-18 21:43:26 - Found child process: 5076 Name: conhost.exe
+2024-07-18 21:43:26 - Found child process: 11252 Name: node.exe
+2024-07-18 21:43:26 - Stopping process 5076
+2024-07-18 21:43:26 - Send SIGINT 5076
+2024-07-18 21:43:26 - SIGINT to 5076 failed - Killing as fallback
+2024-07-18 21:43:26 - Stopping process 11252
+2024-07-18 21:43:26 - Send SIGINT 11252
+2024-07-18 21:43:26 - SIGINT to 11252 failed - Killing as fallback
+2024-07-18 21:43:26 - Stopping process 4012
+2024-07-18 21:43:26 - Send SIGINT 4012
+2024-07-18 21:43:26 - SIGINT to 4012 failed - Killing as fallback
+2024-07-18 21:43:26 - Finished yj.exe
