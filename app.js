@@ -15,7 +15,6 @@ process.on('unhandledRejection', (err) => {
     console.log(err);
     console.log('========');
 })
-
 const app = express()
 mongoose.set('strictQuery', true)
 mongoose.connect(config.mongoUrl)

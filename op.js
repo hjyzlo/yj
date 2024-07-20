@@ -1,5 +1,6 @@
 const products = require("./models/products")
 const orders = require("./models/orders")
+const details = require("./models/details")
 const mongoose = require("mongoose")
 const {DTPWeb} = require("dtpweb")
 const {Pinfo,wx,mjwt,ul} = require("./config")
@@ -63,9 +64,14 @@ exports.oAdd = async (req,res)=>{
     //const order = await orders.create(req.body.data)
     await orders.create(req.body).then(()=>res.sendStatus(200))
 }
+exports.dAdd = async (req,res)=>{
+    //const order = await orders.create(req.body.data)
+    console.log(req.body)
+    await details.create(req.body).then(products.updateMany({_id:{$in:req.body.products}},{stat:false}).then(()=>res.sendStatus(200)))
+}
 exports.pQuery= async (req,res)=>{
     try{
-        await products.find(req.body.query).populate('order').limit(10).skip(req.body.skip).then(data=>res.json(JSON.stringify(data)))      
+        await products.find({...req.body.query,stat:true}).populate('order').limit(10).skip(req.body.skip).then(data=>res.json(JSON.stringify(data)))      
     }catch(error){
         console.log(error)
     }
