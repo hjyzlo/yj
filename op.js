@@ -85,6 +85,9 @@ exports.oQuery= async (req,res)=>{
         console.log(error)
     }
 }
+exports.dQuery= async (req,res)=>{
+    await details.find().then(data=>{res.json(data)})
+}
 exports.login = async(req,res)=>{
     const code = req.body.code
     const url = wx.url.replace('1313ljj',code)
