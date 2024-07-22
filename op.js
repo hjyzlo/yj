@@ -76,6 +76,10 @@ exports.pQuery= async (req,res)=>{
         console.log(error)
     }
 }
+exports.dpQuery= async (req,res)=>{
+    console.log(req.body)
+        products.find({_id:{$in:req.body.products}}).populate('order').then(data=>res.json(data))      
+}
 exports.oQuery= async (req,res)=>{
     try{
         await orders.find().then(data=>{
@@ -86,7 +90,9 @@ exports.oQuery= async (req,res)=>{
     }
 }
 exports.dQuery= async (req,res)=>{
-    await details.find().then(data=>{res.json(data)})
+    await details.aggregate([
+        {$project:{'products':1,'summaryC':1,'summaryP':1,'count':1,'discount':1,'imgUrl':1,'note':1,'creatDate':{$dateToString:{'format':'%Y-%m-%d','date':{"$add":["$creatDate",28800000]}}}}}
+    ]).then(data=>{res.json(data)})
 }
 exports.login = async(req,res)=>{
     const code = req.body.code
@@ -107,5 +113,10 @@ exports.authenticateToken=(req, res, next)=>{
         }
         next();
     });
+}
+exports.test= async (req,res)=>{
+    await details.aggregate([
+        {$project:{"creatDate":1,'newDate':{"$add":["$creatDate",28800000]}}}
+    ]).then(data=>{res.json(data)})
 }
 module.exports = exports

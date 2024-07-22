@@ -4,6 +4,7 @@ const bp = require("body-parser")
 const mongoose = require("mongoose")
 const config = require("./config")
 
+
 process.on('uncaughtException', (err) => {
     console.log('========');
     console.log(err);
