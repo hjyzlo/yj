@@ -91,7 +91,8 @@ exports.oQuery= async (req,res)=>{
 }
 exports.dQuery= async (req,res)=>{
     await details.aggregate([
-        {$project:{'products':1,'summaryC':1,'summaryP':1,'count':1,'discount':1,'imgUrl':1,'note':1,'creatDate':{$dateToString:{'format':'%Y-%m-%d','date':{"$add":["$creatDate",28800000]}}}}}
+        {$project:{'products':1,'summaryC':1,'summaryP':1,'count':1,'discount':1,'imgUrl':1,'note':1,'creatDate':{$dateToString:{'format':'%Y-%m-%d','date':{"$add":["$creatDate",28800000]}}}}},
+        {$match:{'creatDate':{$gte:req.body.sDate,$lte:req.body.eDate}}}
     ]).then(data=>{res.json(data)})
 }
 exports.login = async(req,res)=>{
@@ -113,10 +114,5 @@ exports.authenticateToken=(req, res, next)=>{
         }
         next();
     });
-}
-exports.test= async (req,res)=>{
-    await details.aggregate([
-        {$project:{"creatDate":1,'newDate':{"$add":["$creatDate",28800000]}}}
-    ]).then(data=>{res.json(data)})
 }
 module.exports = exports

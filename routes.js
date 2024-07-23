@@ -1,5 +1,5 @@
 const express = require("express")
-const { pAdd, login, pQuery,oQuery,dQuery,dpQuery,authenticateToken,upload,oAdd,dAdd,test } = require("./op")
+const { pAdd, login, pQuery,oQuery,dQuery,dpQuery,authenticateToken,upload,oAdd,dAdd } = require("./op")
 const route = express.Router()
 route.post("/pAdd",upload.single("singleFile"),pAdd)
 route.post("/oAdd",authenticateToken,oAdd)
@@ -9,5 +9,4 @@ route.post("/pQuery",authenticateToken,pQuery)
 route.post("/oQuery",authenticateToken,oQuery)
 route.post("/dQuery",dQuery)
 route.post("/dpQuery",dpQuery)
-route.post("/test",test)
 module.exports = route
